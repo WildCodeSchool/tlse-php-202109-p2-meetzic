@@ -1,0 +1,85 @@
+.index__h1{
+    margin: 1.2rem;
+    font-size: 2rem;
+    text-align: center;
+    font-family: textFont;
+}
+.index__ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: center;   
+}
+.index__ul li{
+    margin: 0.2rem;
+    list-style:none;
+}
+.index__img{  
+    width: 100%;
+    height: auto; 
+    border: 2px solid black;
+    border-radius: 10px;
+    z-index:1;
+    box-shadow:0 0 3px black;
+}
+
+@media screen and (min-width: 576px) {
+    .index__h1 {
+        font-size: 3rem;
+    }
+    .index__ul li{
+        margin: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .index__h1 {
+        font-size: 4rem;
+    }
+    .index__ul li{
+        margin: 1rem;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .index__ul {
+        flex-direction: row;
+    }
+    /* Probleme de dimensions de la page à cause de la navbar. Bootstrap ? voir avec Sylvain */
+}
+
+@media screen and (min-width: 1200px) {
+    .index__h1 {
+        margin: 2rem;
+        font-size: 4rem;
+    }
+    .index__img {
+        height: 28em;
+        -webkit-transition:all .5s cubic-bezier(.6,2,.4,1);
+            -moz-transition:all .5s cubic-bezier(.6,2,.4,1);
+                -ms-transition:all .5s cubic-bezier(.6,2,.4,1);
+                -o-transition:all .5s cubic-bezier(.6,2,.4,1);
+                    transition:all .5s cubic-bezier(.6,2,.4,1);
+    }
+    .index__ul li:nth-child(3){
+        clear:left;
+    }
+    .index__ul li:hover img {
+        z-index:5;
+        -webkit-transform: scale(1.1);
+            -moz-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                -o-transform: scale(1.1);
+                    transform: scale(1.1);
+        box-shadow:0 0 10px black;
+    }
+    .index__ul:hover li:not(:hover) img {
+        -webkit-filter: grayscale(1) blur(5px);
+            -moz-filter: grayscale(1) blur(5px);
+                -ms-filter: grayscale(1) blur(5px);
+                -o-filter: grayscale(1) blur(5px);
+                    filter: grayscale(1) blur(5px);
+    }
+}
