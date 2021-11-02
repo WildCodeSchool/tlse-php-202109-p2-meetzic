@@ -1,10 +1,11 @@
-.index__h1{
+.index__h1 {
     margin: 1.2rem;
     font-size: 2rem;
     text-align: center;
     font-family: textFont;
 }
-.index__ul{
+
+.index__ul {
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,11 +13,13 @@
     justify-content: space-evenly;
     align-content: center;   
 }
-.index__ul li{
+
+.index__ul li {
     margin: 0.2rem;
     list-style:none;
 }
-.index__img{  
+
+.index__img {  
     width: 100%;
     height: auto; 
     border: 2px solid black;
@@ -29,7 +32,8 @@
     .index__h1 {
         font-size: 3rem;
     }
-    .index__ul li{
+
+    .index__ul li {
         margin: 0.5rem;
     }
 }
@@ -38,7 +42,8 @@
     .index__h1 {
         font-size: 4rem;
     }
-    .index__ul li{
+
+    .index__ul li {
         margin: 1rem;
     }
 }
@@ -55,6 +60,7 @@
         margin: 2rem;
         font-size: 4rem;
     }
+
     .index__img {
         height: 28em;
         -webkit-transition:all .5s cubic-bezier(.6,2,.4,1);
@@ -63,9 +69,11 @@
                 -o-transition:all .5s cubic-bezier(.6,2,.4,1);
                     transition:all .5s cubic-bezier(.6,2,.4,1);
     }
-    .index__ul li:nth-child(3){
+
+    .index__ul li:nth-child(3) {
         clear:left;
     }
+
     .index__ul li:hover img {
         z-index:5;
         -webkit-transform: scale(1.1);
@@ -75,6 +83,7 @@
                     transform: scale(1.1);
         box-shadow:0 0 10px black;
     }
+
     .index__ul:hover li:not(:hover) img {
         -webkit-filter: grayscale(1) blur(5px);
             -moz-filter: grayscale(1) blur(5px);
