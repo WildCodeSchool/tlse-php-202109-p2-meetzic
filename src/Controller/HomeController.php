@@ -21,6 +21,16 @@ class HomeController extends AbstractController
      */
     public function index()
     {
+        return $this->twig->render('Index/index.html.twig');
+    }
+
+    public function home()
+    {
         return $this->twig->render('Home/index.html.twig');
+    }
+
+    public function publicProfil()
+    {
+        return $this->twig->render('PublicProfil/publicProfil.html.twig');
     }
 }

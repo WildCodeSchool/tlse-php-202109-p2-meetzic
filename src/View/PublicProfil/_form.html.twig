@@ -1,0 +1,36 @@
+<form action="" method="post" class="formulaire">
+<label for="avatar">Votre photo :
+    <img src="" alt="" name="avatar" class="avatar">
+</label>
+<label for="nickname">Pseudo :
+    <input type="text" class="nickname input" name="nickname" required>
+</label>
+<label for="instrument">Instrument :
+    <input type="text" class="instrument input" name="instrument" required>
+</label>
+<label for="style">Style musical :
+    <input type="text" class="style input" name="style" required>
+</label>
+<label for="experience">Niveau musical :
+    <select name="experience" class="experience input" required>
+        <option value="beginner">Débutant</option>
+        <option value="advanced">Intermédiaire</option>
+        <option value="expert">Expert</option>
+    </select>
+</label>
+<label for="band">
+    <select name="band" class="band input" required>
+        <option value="noBand">Je suis musicien</option>
+        <option value="band">Je represente un groupe</option>
+    </select>
+</label>
+<label for="status">
+    <select name="status" class="status input">
+        <option value="0">Je suis disponible</option>
+        <option value="1">Je ne suis pas disponible</option>
+    </select>
+</label>
+<label for="description" required>
+    <textarea name="description" class="description"></textarea>
+</label>
+</form>
