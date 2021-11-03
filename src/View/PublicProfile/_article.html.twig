@@ -1,0 +1,38 @@
+<section class="avatar">
+    <img src="{{ tupple.avatar }}" alt="" class="logo_avatar">
+</section>
+<article>
+    <div class="nickname">
+        <h3>Pseudo :</h3>
+        <p>{{ tupple.nickname }}</p>
+    </div>
+    <div class="instrument">
+        <h3>Instrument :</h3>
+        <p>{{ tupple.instrument }}</p>
+    </div>
+    <div class="style">
+        <h3>Style musical :</h3>
+        <p>{{ tupple.style }}</p>
+    </div>
+    <div class="experience">
+        <h3>Niveau musical :</h3>
+        <p>{{ tupple.experience }}</p>
+    </div>
+    <div class="band">
+        <h3>Etes vous dans un groupe ? :</h3>
+        <p> {% if tupple.band == null %}
+            Pas de groupe
+            {% else %}
+            {{ tupple.band }}
+            {% endif %}       
+        </p>
+    </div>
+    <div class="status">
+        <h3>Etes vous disponible ? :</h3>
+        <p>{{ tupple.status }}</p>
+    </div>
+    <div class="description">
+        <h3>Description :</h3>
+        <p>{{ tupple.description }}</p>
+    </div>
+</article>
