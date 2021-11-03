@@ -23,9 +23,4 @@ class HomeController extends AbstractController
     {
         return $this->twig->render('Home/index.html.twig');
     }
-
-    public function publicProfil()
-    {
-        return $this->twig->render('PublicProfil/publicProfil.html.twig');
-    }
 }
