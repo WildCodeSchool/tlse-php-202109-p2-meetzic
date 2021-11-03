@@ -26,6 +26,7 @@ CREATE TABLE `ad` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(60) NOT NULL,
   `description` text NOT NULL,
+  `picture` varchar(255) DEFAULT NULL,
   `musician_id` int NOT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_ad_1_idx` (`musician_id`),
@@ -39,7 +40,7 @@ CREATE TABLE `ad` (
 
 LOCK TABLES `ad` WRITE;
 /*!40000 ALTER TABLE `ad` DISABLE KEYS */;
-INSERT INTO `ad` VALUES (8,'Guitariste recherche groupe blues rock','Hello, je recherche un groupe blues rock pour participer avec moi au prochain Woodstock festival.',1),(9,'Chanteur pop célèbre cherche groupe','Je recherche 4 frères pour chanter et danser avec moi.',2),(10,'Recherche plusieurs musiciens pour projet rock progressif','Je souhaite reformer le groupe de mes débuts qui s\'appelait Genesis. Je recherche un guitariste, un clavier et un bassiste.',3),(11,'Groupe légendaire cherche son batteur','Nous recherchons un batteur !',4),(12,'Les papys du rock se réinventent','Comme il n\'est jamais trop tard pour évoluer artistiquement, les Breaking Stones, petit groupe rock connu mondialement recherche un accordeoniste style retro musette.',5),(13,'Recherche bassiste','Bonjour, je suis Frederic Mercure et je recherche un bassiste pour mon groupe \"King\".',6),(14,'Recherche groupe aux influences diverses','Bonjour, je recherche un groupe de punk rock musette avec un touche de metal.',4);
+INSERT INTO `ad` VALUES (8,'Guitariste recherche groupe blues rock','Hello, je recherche un groupe blues rock pour participer avec moi au prochain Woodstock festival.',NULL,1),(9,'Chanteur pop célèbre cherche groupe','Je recherche 4 frères pour chanter et danser avec moi.',NULL,2),(10,'Recherche plusieurs musiciens pour projet rock progressif','Je souhaite reformer le groupe de mes débuts qui s\'appelait Genesis. Je recherche un guitariste, un clavier et un bassiste.',NULL,3),(11,'Groupe légendaire cherche son batteur','Nous recherchons un batteur !',NULL,4),(12,'Les papys du rock se réinventent','Comme il n\'est jamais trop tard pour évoluer artistiquement, les Breaking Stones, petit groupe rock connu mondialement recherche un accordeoniste style retro musette.',NULL,5),(13,'Recherche bassiste','Bonjour, je suis Frederic Mercure et je recherche un bassiste pour mon groupe \"King\".',NULL,6),(14,'Recherche groupe aux influences diverses','Bonjour, je recherche un groupe de punk rock musette avec un touche de metal.',NULL,4);
 /*!40000 ALTER TABLE `ad` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-29 11:17:45
+-- Dump completed on 2021-10-31 17:17:44
