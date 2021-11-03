@@ -9,7 +9,7 @@ class ProfileController extends AbstractController
     public function show(int $id): string
     {
         $profileManager = new ProfileManager();
-        $tupple = $profileManager->selectNicknameById($id);
+        $tupple = $profileManager->selectAllColumnById($id);
 
         return $this->twig->render('PublicProfile/publicProfile.html.twig', ['tupple' => $tupple]);
     }
