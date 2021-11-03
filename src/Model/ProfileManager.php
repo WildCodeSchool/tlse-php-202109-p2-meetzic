@@ -4,7 +4,7 @@ namespace App\Model;
 
 class ProfileManager extends AbstractManager
 {
-    public function selectNicknameById(int $id): array
+    public function selectAllColumnById(int $id): array
     {
         $statement = $this->pdo->prepare(
             'SELECT m.avatar, m.nickname, m.experience, m.status, m.description, 
