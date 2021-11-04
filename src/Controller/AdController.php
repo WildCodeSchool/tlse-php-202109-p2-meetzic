@@ -10,6 +10,6 @@ class AdController extends AbstractController
     {
         $adModel = new AdModel();
         var_dump($adModel->getAll());
-        return $this->twig->render('Ad/ad.html.twig');
+        return $this->twig->render('Home/ad.html.twig');
     }
 }
