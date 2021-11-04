@@ -1,38 +1,67 @@
-<section class="avatar">
-    <img src="{{ tupple.avatar }}" alt="" class="logo_avatar">
-</section>
-<article>
-    <div class="nickname">
-        <h3>Pseudo :</h3>
-        <p>{{ tupple.nickname }}</p>
+<div class="container mt-5">
+    <div class ="row">
+        <div class="col-12">
+            <div class="container">
+                <div class ="row">
+                    <div class="col-4">
+                    <img src="{{ tupple.avatar }}" alt="" class="img-fluid h-75 w-auto border border-dark rounded shadow">
+                    </div>
+                    <div class="col-8">
+                        <div class="container">
+                            <div class ="row d-flex flex-wrap">
+                                <div class="col-6 d-flex flex-wrap">
+                                <h3 class="small font-italic text-muted">Pseudo </h3>
+                                <p>{{ tupple.nickname }}</p>
+                                </div>
+                                <div class="col-6 d-flex flex-wrap">
+                                <h3 class="small font-italic text-muted">Instrument</h3>
+                                <p>{{ tupple.instrument }}</p>
+                                </div>
+                                <div class="col-6 d-flex flex-wrap">
+                                <h3 class="small font-italic text-muted">Style musical</h3>
+                                <p>{{ tupple.style }}</p>
+                                </div>
+                                <div class="col-6 d-flex flex-wrap">
+                                <h3 class="small font-italic text-muted">Groupe</h3>
+                                <p> {% if tupple.band == null %}
+                                        Pas de groupe
+                                    {% else %}
+                                    {{ tupple.band }}
+                                    {% endif %}       
+                                </p>
+                                </div>
+                                <div class="col-6 d-flex flex-wrap">
+                                <h3 class="small font-italic">Disponibilité</h3>
+                                <p> {% if tupple.status == 0 %}
+                                        Non disponible
+                                    {% else %}
+                                        Disponible
+                                    {% endif %} 
+                                </p>
+                                </div>
+                                <div class="col-6 d-flex flex-wrap">
+                                <h3 class="small font-italic text-muted">Experience</h3>
+                                <p> {% if tupple.experience == 'beginner' %}
+                                        Débutant
+                                    {% elseif tupple.experience == 'advanced' %}
+                                        Intermediaire
+                                    {% else %}
+                                        Expert
+                                    {% endif %}
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="instrument">
-        <h3>Instrument :</h3>
-        <p>{{ tupple.instrument }}</p>
+</div>
+<div class="container mt-3">
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 text-center">
+            <p>{{ tupple.description }}</p>
+        </div>
     </div>
-    <div class="style">
-        <h3>Style musical :</h3>
-        <p>{{ tupple.style }}</p>
-    </div>
-    <div class="experience">
-        <h3>Niveau musical :</h3>
-        <p>{{ tupple.experience }}</p>
-    </div>
-    <div class="band">
-        <h3>Etes vous dans un groupe ? :</h3>
-        <p> {% if tupple.band == null %}
-            Pas de groupe
-            {% else %}
-            {{ tupple.band }}
-            {% endif %}       
-        </p>
-    </div>
-    <div class="status">
-        <h3>Etes vous disponible ? :</h3>
-        <p>{{ tupple.status }}</p>
-    </div>
-    <div class="description">
-        <h3>Description :</h3>
-        <p>{{ tupple.description }}</p>
-    </div>
-</article>
+</div>
