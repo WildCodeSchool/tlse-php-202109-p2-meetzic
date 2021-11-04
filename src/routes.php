@@ -14,7 +14,6 @@ return [
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
     'profile/show' => ['ProfileController', 'show', ['id']],
-    'home' => ['HomeController', 'home',],
+    'home' => ['AdController', 'browse',],
     'profile' => ['HomeController', 'publicProfile'],
-    'ad' => ['AdController', 'browse'],
 ];
