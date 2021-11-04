@@ -8,7 +8,7 @@ class AdModel extends AbstractManager
     {
         $statement = $this->pdo->query('SELECT * FROM ad');
         $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
-        return $result;     
+        return $result;
     }
 
     public function getById(int $id): ?array
@@ -17,7 +17,6 @@ class AdModel extends AbstractManager
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();
         $result = $statement->fetch(\PDO::FETCH_ASSOC);
-        return $result === false ? null : $result; 
-    }   
+        return $result === false ? null : $result;
+    }
 }
-
