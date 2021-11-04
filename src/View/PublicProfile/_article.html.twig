@@ -24,7 +24,7 @@
                                 <div class="col-6 d-flex flex-wrap">
                                 <h3 class="small font-italic text-muted">Groupe</h3>
                                 <p> {% if tupple.band == null %}
-                                    Pas de groupe
+                                        Pas de groupe
                                     {% else %}
                                     {{ tupple.band }}
                                     {% endif %}       
@@ -33,20 +33,20 @@
                                 <div class="col-6 d-flex flex-wrap">
                                 <h3 class="small font-italic">Disponibilité</h3>
                                 <p> {% if tupple.status == 0 %}
-                                    Non disponible
+                                        Non disponible
                                     {% else %}
-                                    Disponible
+                                        Disponible
                                     {% endif %} 
                                 </p>
                                 </div>
                                 <div class="col-6 d-flex flex-wrap">
                                 <h3 class="small font-italic text-muted">Experience</h3>
                                 <p> {% if tupple.experience == 'beginner' %}
-                                    Débutant
+                                        Débutant
                                     {% elseif tupple.experience == 'advanced' %}
-                                    Intermediaire
+                                        Intermediaire
                                     {% else %}
-                                    Expert
+                                        Expert
                                     {% endif %}
                                 </p>
                                 </div>
@@ -61,7 +61,7 @@
 <div class="container mt-3">
     <div class="row d-flex justify-content-center">
         <div class="col-12 text-center">
-        <p>{{ tupple.description }}</p>
+            <p>{{ tupple.description }}</p>
         </div>
     </div>
 </div>
