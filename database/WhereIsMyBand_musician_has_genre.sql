@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 8.0.27, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.25, for Linux (x86_64)
 --
 -- Host: 127.0.0.1    Database: WhereIsMyBand
 -- ------------------------------------------------------
@@ -39,6 +39,7 @@ CREATE TABLE `musician_has_genre` (
 
 LOCK TABLES `musician_has_genre` WRITE;
 /*!40000 ALTER TABLE `musician_has_genre` DISABLE KEYS */;
+INSERT INTO `musician_has_genre` VALUES (1,1),(4,1),(5,1),(6,1),(2,2),(3,2),(7,11);
 /*!40000 ALTER TABLE `musician_has_genre` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +52,6 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-03 13:16:01
+
+-- Dump completed on 2021-11-03 16:24:39
+
