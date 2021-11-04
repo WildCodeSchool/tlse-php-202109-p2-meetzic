@@ -8,15 +8,6 @@
     src: url("../fonts/Black\ Bones.ttf");
 }
 
-:root {
- 
-}
-
-p h1 {
-    font-family: textFont;
-}
-
-
 .footer {
     background-color: green;
 }
