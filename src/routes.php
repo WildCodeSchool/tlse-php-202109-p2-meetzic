@@ -16,4 +16,5 @@ return [
     'profile/show' => ['ProfileController', 'show', ['id']],
     'home' => ['HomeController', 'home',],
     'profile' => ['HomeController', 'publicProfile'],
+    'ad' => ['AdController', 'browse'],
 ];
