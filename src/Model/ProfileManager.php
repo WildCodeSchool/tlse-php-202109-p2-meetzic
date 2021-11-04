@@ -22,4 +22,20 @@ class ProfileManager extends AbstractManager
 
         return $tupple;
     }
+
+    public function selectOneAdById(int $id): array
+    {
+        $statement = $this->pdo->prepare(
+            'SELECT ad.title, ad.description
+            FROM ad
+            JOIN musician m 
+            ON m.id = ad.musician_id
+            WHERE m.id = :id;'
+        );
+        $statement->bindValue(':id', $id, \PDO::PARAM_STR);
+        $statement->execute();
+        $card = $statement->fetch(\PDO::FETCH_ASSOC);
+
+        return $card;
+    }
 }
