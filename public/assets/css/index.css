@@ -62,7 +62,7 @@
     }
 
     .index__img {
-        height: 28em;
+        height: 26em;
         -webkit-transition:all .5s cubic-bezier(.6,2,.4,1);
             -moz-transition:all .5s cubic-bezier(.6,2,.4,1);
                 -ms-transition:all .5s cubic-bezier(.6,2,.4,1);
