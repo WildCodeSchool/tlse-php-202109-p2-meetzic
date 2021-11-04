@@ -1,6 +1,3 @@
-.footer {
-    background-color: #303030;
-
 @font-face {
     font-family: titleFont;
     src: url("../fonts/Frijole-Regular.ttf");
@@ -8,5 +5,9 @@
 
 @font-face {
     font-family: textFont;
-    src: url("../fonts/Royalacid.ttf");
+    src: url("../fonts/Black\ Bones.ttf");
+}
+
+.footer {
+    background-color: green;
 }
