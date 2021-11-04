@@ -10,9 +10,4 @@ return [
     '' => ['HomeController', 'index',],
     'home' => ['AdController', 'browse',],
     'profile/show' => ['ProfileController', 'show', ['id']],
-    /*'items' => ['ItemController', 'index',],
-    'items/edit' => ['ItemController', 'edit', ['id']],
-    'items/show' => ['ItemController', 'show', ['id']],
-    'items/add' => ['ItemController', 'add',],
-    'items/delete' => ['ItemController', 'delete',],*/
 ];

@@ -5,9 +5,11 @@
 {% block content %}  
     <section class="index">
         <h1 class="index__h1">Que recherchez-vous ?</h1>    
+        <form action="home" method="POST">
         <ul class="index__ul">
-            <li><a href="home"><img class="index__img" src="/assets/images/band.jpg" alt="band"></a></li>
+            <li><a><img class="index__img" src="/assets/images/band.jpg" alt="band"></a></li>
             <li><a href="home"><img class="index__img" src="/assets/images/musician.png" alt="musician"></a></li>
         </ul>
+        </form>
     </section>
 {% endblock %}
