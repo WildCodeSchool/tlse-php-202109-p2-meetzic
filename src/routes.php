@@ -15,4 +15,5 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'home' => ['HomeController', 'home',],
     'profile' => ['HomeController', 'publicProfile'],
+    'ad' => ['AdController', 'browse'],
 ];
