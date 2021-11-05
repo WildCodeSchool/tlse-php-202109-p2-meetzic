@@ -6,7 +6,8 @@ class AdModel extends AbstractManager
 {
     public function getAll(): array
     {
-        $statement = $this->pdo->query('SELECT * FROM ad');
+        $statement = $this->pdo->query('SELECT ad.title, ad.description, musician.avatar FROM ad
+        JOIN musician ON musician.id=ad.musician_id;');
         $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
     }
