@@ -8,6 +8,8 @@ class AdController extends AbstractController
 {
     public function browse()
     {
-        return $this->twig->render('Home/ad.html.twig');
+        $adModel = new AdModel();
+        $ads = $adModel->getAll();
+        return $this->twig->render('Home/ad.html.twig', ['ads' => $ads]);
     }
 }

@@ -1,5 +1,7 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    {% include "_ad.html.twig" %}   
+    {% for ad in ads %}
+        {% include "_adCard.html.twig" %} 
+    {% endfor %}       
 {% endblock %}
