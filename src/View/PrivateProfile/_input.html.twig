@@ -1,0 +1,103 @@
+<form class="row g-3" action="profile/show" method="post">
+    <div class="col-xs-5">
+        <img src="" alt="picture of artist" class="border border-dark rounded shadow">
+    </div>
+    <div class="col-xs-7">
+        <h3>Bonjour ...</h3>
+        <p>Veuillez ajouter certaines informations sur votre profil</p>    
+    </div>
+    <div class="col-xs-6">
+        <label for="nickname" class="form-label">Pseudo :
+            <input type="text" class="form-control" id="nickname" name="nickname" value="" placeholder="pseudo" required>
+        </label>
+    </div>
+    <div class="col-xs-6">
+        <label for="password" class="form-label">Mot de passe :
+            <input type="password" class="form-control" id="password" name="password" value="" placeholder="*********" required>
+        </label>
+    </div>
+    <div class="col-xs-6">
+        <label for="firstname" class="form-label">Prénom :
+            <input type="text" class="form-control" id="firstname" name="firstname" value="" placeholder="prénom" required>
+        </label>
+    </div>
+    <div class="col-xs-6">
+        <label for="lastname" class="form-label">Nom :
+            <input type="text" class="form-control" id="lastname" name="lastname" value="" placeholder="nom">
+        </label>
+    </div>
+    <div class="col-xs-12">
+        <label for="mail" class="form-label">E-mail :
+            <input type="email" class="form-control" id="mail" name="mail" value="" placeholder="mail@mail.fr" required>
+        </label>
+    </div>
+    <div class="col-xs-6">
+        <label for="band" class="form-label">Groupe :
+            <select id="band" class="form-select" name="band">
+                <option value="">Je suis dans un groupe</option>
+                <option value="">Je ne suis pas dans un groupe</option>
+            </select>
+        </label>
+    </div>
+    <div class="col-xs-6">
+        <label for="instrument" class="form-label">Instrument :
+            <select id="instrument" class="form-select" name="instrument" required>
+                <option value="">Guitare</option>
+                <option value="">Batterie</option>
+                <option value="">Basse</option>
+                <option value="">Chant</option>
+                <option value="">Piano</option>
+                <option value="">Clavier</option>
+                <option value="">Cuivres</option>
+                <option value="">Percussion</option>
+                <option value="">Accordéon</option>
+            </select>
+        </label>
+    </div>
+    <div class="col-xs-6">
+        <label for="experience" class="form-label">Niveau d'experience :
+            <select id="experience" class="form-select" name="experience" required>
+                <option value="">Débutant</option>
+                <option value="">Confirmé</option>
+                <option value="">Expert</option>
+            </select>
+        </label>
+    </div>
+    <div class="col-xs-6">
+        <label for="status" class="form-label">Disponibilité :
+            <select id="status" class="form-select" name="status" required>
+                <option value="">Disponible</option>
+                <option value="">Non disponible</option>
+            </select>
+        </label>
+    </div>
+    <div class="col-xs-6">
+        <label for="genre" class="form-label">Genre musical :
+            <select id="genre" class="form-select" name="genre">
+                <option value="">Rock</option>
+                <option value="">Pop</option>
+                <option value="">Metal</option>
+                <option value="">Funk</option>
+                <option value="">Soul</option>
+                <option value="">Hard-rock</option>
+                <option value="">Punk-rock</option>
+                <option value="">Electro</option>
+                <option value="">Disco</option>
+                <option value="">Reggae</option>
+                <option value="">Musette</option>
+                <option value="">Jazz</option>
+                <option value="">Classique</option>
+            </select>
+        </label>
+    </div>
+    <div class="col-xs-11">
+    <label for="description" class="form-label">Disponibilité :
+        <textarea type="textarea" class="form-control" id="description" name="description">
+            value=""
+        </textarea>
+    </label>
+    </div>
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">Valider</button>
+    </div>
+</form>
