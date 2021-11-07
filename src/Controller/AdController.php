@@ -19,7 +19,7 @@ class AdController extends AbstractController
                 $ads = $adModel->getAdBand();
                 return $this->twig->render('Home/ad.html.twig', ['ads' => $ads]);
             }
-        }           
+        }
         $ads = $adModel->getAll();
         return $this->twig->render('Home/ad.html.twig', ['ads' => $ads]);
     }
