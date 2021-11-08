@@ -3,12 +3,12 @@
         <div class="card mb-3" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="..." class="img-fluid rounded-start" alt="...">
+                    <img src={{ ad['avatar'] }} class="img-fluid rounded-start" alt="user_picture">    
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                        <h5 class="card-title">request title from table ad</h5>
-                        <p class="card-text">request description from table ad</p>
+                        <h5 class="card-title">{{ ad['title'] }}</h5>
+                        <p class="card-text">{{ ad['description'] }}</p>
                     </div>
                 </div>
             </div>

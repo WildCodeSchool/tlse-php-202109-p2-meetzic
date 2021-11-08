@@ -9,5 +9,13 @@
 }
 
 .footer {
-    background-color: green;
+    background-color: #303030;
+}
+
+.card-body {
+    height: 12rem; 
+}
+
+.adCard {
+    margin-top: 1rem;
 }
