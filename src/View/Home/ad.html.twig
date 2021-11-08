@@ -1,7 +1,11 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    {% for ad in ads %}
-        {% include "_adCard.html.twig" %} 
-    {% endfor %}       
+    <main class="container">
+        <section class="row row-cols-1 row-cols-lg-2">
+            {% for ad in ads %}
+                {% include "_adCard.html.twig" %} 
+            {% endfor %}   
+        </section>
+    </main>    
 {% endblock %}
