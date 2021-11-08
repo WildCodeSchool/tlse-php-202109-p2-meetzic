@@ -1,0 +1,40 @@
+<article class="adCard">
+    <div class="container">
+        <div class="card mb-3" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src={{ ad['avatar'] }} class="img-fluid rounded-start" alt="user_picture">    
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ ad['title'] }}</h5>
+                        <p class="card-text">{{ ad['description'] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+</article>
+<form action="" method="get">
+    <div class="container">
+        <div class="input-group">
+        <input type="search" name="query" class="form-control rounded" placeholder="Rechercher" aria-label="Search"aria-describedby="search-addon" id="query"/>
+         <button type="button" class="btn btn-outline-primary">rechercher</button>   
+    </div>
+
+    </div>
+    
+    <div class="container">
+        <input type="checkbox" class="btn-check" name="filter" id="btn-check" autocomplete="off" />
+        <label class="btn btn-primary" for="btn-check">Guitare</label>
+
+        <input type="checkbox" class="btn-check" name="filter" id="btn-check2" checked autocomplete="off" />
+        <label class="btn btn-primary" for="btn-check2">Genre</label>
+
+        <input type="checkbox" class="btn-check" name="filter" id="btn-check3" autocomplete="off" />
+        <label class="btn btn-primary" for="btn-check3">Expert</label>
+
+        <input type="checkbox" class="btn-check" name="filter" id="btn-check4" autocomplete="off" />
+        <label class="btn btn-primary" for="btn-check4">Available</label>
+    </div>
+</form>
