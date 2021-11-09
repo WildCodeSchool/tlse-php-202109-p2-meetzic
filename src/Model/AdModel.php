@@ -6,7 +6,7 @@ class AdModel extends AbstractManager
 {
     public function getAll(): array
     {
-        $statement = $this->pdo->query('SELECT ad.title, ad.description, musician.avatar FROM ad
+        $statement = $this->pdo->query('SELECT ad.title, ad.description, musician.avatar, musician.id FROM ad
         JOIN musician ON musician.id=ad.musician_id;');
         $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
@@ -23,7 +23,7 @@ class AdModel extends AbstractManager
 
     public function getAdBand(): array
     {
-        $statement = $this->pdo->query('SELECT ad.title, ad.description, musician.avatar FROM ad
+        $statement = $this->pdo->query('SELECT ad.title, ad.description, musician.avatar, musician.id FROM ad
         JOIN musician ON musician.id=ad.musician_id 
         WHERE musician.band_id IS NOT NULL;');
         $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
@@ -32,7 +32,7 @@ class AdModel extends AbstractManager
 
     public function getAdMusician(): array
     {
-        $statement = $this->pdo->query('SELECT ad.title, ad.description, musician.avatar FROM ad
+        $statement = $this->pdo->query('SELECT ad.title, ad.description, musician.avatar, musician.id FROM ad
         JOIN musician ON musician.id=ad.musician_id  
         WHERE musician.band_id IS NULL;');
         $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
