@@ -8,14 +8,17 @@
     src: url("../fonts/Black\ Bones.ttf");
 }
 
+/* style layout */
 body {
     background-image: url("../images/banner-bg.jpg");
-    background-size: cover;
-    position: relative;   
+    background-size: 100vw 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 @media screen and (min-width: 1024px) {
-    .navbar {
+    .navbar__nav {
         max-width: 1200px;
         margin-left: 10rem;
     }
@@ -45,11 +48,11 @@ nav button {
     border : none;
 }
 
-.footer {
-    background-color: #303030;
-}
-
-.card-body {
+/*.card-body {
     height: 12rem; 
-}
+}*/
 
+/* style profil public */
+button {
+    height: 2.5rem;
+}
