@@ -44,3 +44,12 @@ body {
 nav button {
     border : none;
 }
+
+.footer {
+    background-color: #303030;
+}
+
+.card-body {
+    height: 12rem; 
+}
+
