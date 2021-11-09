@@ -8,6 +8,39 @@
     src: url("../fonts/Black\ Bones.ttf");
 }
 
-.footer {
-    background-color: green;
+body {
+    background-image: url("../images/banner-bg.jpg");
+    background-size: cover;
+    position: relative;   
+}
+
+@media screen and (min-width: 1024px) {
+    .navbar {
+        max-width: 1200px;
+        margin-left: 10rem;
+    }
+    
+    nav img {
+        top:-2.5rem;
+        left:-2rem;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    nav img {
+        height : 5rem;
+        top: 0rem;
+        left: 0rem;
+    }
+
+    body {
+        background-image: url("../images/banner-bg.jpg");
+        background-size: cover;
+        position: relative;
+        background-position-x: center;  
+    }
+}
+
+nav button {
+    border : none;
 }

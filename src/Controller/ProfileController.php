@@ -13,4 +13,9 @@ class ProfileController extends AbstractController
 
         return $this->twig->render('PublicProfile/publicProfile.html.twig', ['tupple' => $tupple]);
     }
+
+    public function profileView()
+    {
+        return $this->twig->render('PrivateProfile/privateProfile.html.twig');
+    }
 }

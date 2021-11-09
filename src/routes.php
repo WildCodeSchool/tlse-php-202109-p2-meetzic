@@ -10,5 +10,5 @@ return [
     '' => ['IndexController', 'index',],
     'home' => ['AdController', 'browse',],
     'profile/show' => ['ProfileController', 'show', ['id']],
-    'private' => ['PrivateController', 'test'],
+    'private' => ['ProfileController', 'profileView'],
 ];
