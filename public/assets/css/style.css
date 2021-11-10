@@ -17,6 +17,14 @@ body {
     background-attachment: fixed;
 }
 
+body h1, h2, h3, h4, h5, h6, .navBar__link {
+    font-family: titleFont;
+}
+
+.navBar__link {
+    font-size: 0.9rem;
+}
+
 @media screen and (min-width: 1024px) {
     .navbar__nav {
         max-width: 1200px;
@@ -56,7 +64,9 @@ button {
 }
 
 .body__adCard {
-    height: 8rem; 
+    height: 9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #image__adCard {
