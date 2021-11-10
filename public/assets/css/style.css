@@ -73,6 +73,7 @@ button {
 }
 .footer {
     background-color: #303030;
+    font-size: 0.5rem;
 }
 
 .body__adCard {
@@ -96,4 +97,8 @@ button {
 
 .description__adCard {
     margin-right: 0.8rem;
+}
+
+.seachBtn {
+    margin-top: 2rem;
 }
