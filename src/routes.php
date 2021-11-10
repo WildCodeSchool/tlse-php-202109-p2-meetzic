@@ -6,9 +6,14 @@
 //          2. method name
 //          3. (optional) array of query string keys to send as parameter to the method
 // e.g route '/item/edit?id=1' will execute $itemController->edit(1)
+
+use App\Controller\SessionController;
+
 return [
     '' => ['IndexController', 'index',],
     'home' => ['AdController', 'browseByChoice',],
-    'profile/show' => ['ProfileController', 'show', ['id']],
+    'profile' => ['ProfileController', 'show', ['id']],
     'private' => ['ProfileController', 'profileView'],
+    'login' => ['SessionController', 'login'],
+    'new' => ['SessionController', 'creation'],
 ];

@@ -1,0 +1,43 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row justify-content-center mt-4">
+        <div class="col-xs-4 text-center">
+            <h2>Créer un compte</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-xs-4 text-center">
+            <h6>Vous êtes prêt ? Allons-y !</h6>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <form class="needs-validation" novalidate action="" method="POST">
+        <div class="row justify-content-center">
+            <div class="col-xs-6 m-2 mt-3">
+                <label for="nickname" class="form-label m-0">Identifiant</label>
+                <input type="text" class="form-control font-italic" name="nickname" placeholder="Entrez votre pseudo">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xs-6 m-2">
+                <label for="password" class="form-label m-0">Mot de passe</label>
+                <input type="text" class="form-control font-italic" name="password" placeholder="Entrez un mot de passe">
+            </div>
+        </div> 
+        <div class="row justify-content-center">
+            <div class="col-xs-6 m-2">
+                <label for="password" class="form-label m-0">Confirmez le mot de passe</label>
+                <input type="text" class="form-control font-italic " name="password" placeholder="Saisir à nouveau">
+            </div>
+        </div>
+        <div class="row justify-content-center">
+              <div class="col-xs-2 m-4">
+                  <button class="btn btn-primary" type="submit">Créez votre compte</button>
+              </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
