@@ -23,6 +23,11 @@ h6 {
     font-size: 0.9rem;
 }
 
+.card__profile {
+    font-family: titleFont;
+    font-size: 0.6rem;
+}
+
 /* style layout */
 body {
     background-image: url("../images/banner-bg.jpg");
@@ -71,7 +76,9 @@ button {
 }
 
 .body__adCard {
-    height: 8rem; 
+    height: 9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #image__adCard {
