@@ -73,10 +73,10 @@
     </form>
 </div>            
 <main class="container">
-    <section class="row row-cols-1 row-cols-lg-2">
-        {% for ad in ads %}
-            {% include "_adCard.html.twig" %} 
-        {% endfor %}   
-    </section>
+        <section class="row row-col-1 row-col-lg-2 mt-4">
+            {% for ad in ads %}
+                {% include "_adCard.html.twig" %} 
+            {% endfor %}   
+        </section>
 </main>    
 {% endblock %}
