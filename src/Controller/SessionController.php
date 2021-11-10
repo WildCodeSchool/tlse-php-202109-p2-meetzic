@@ -28,15 +28,15 @@ class SessionController extends AbstractController
                 $verified = password_verify($password, $hash);
 
                 if ($nickname !== LOGIN) {
-                    $errors[] = "Mauvais identifiant !";
-                } elseif ($verified !== false) {
-                    $errors[] = "Mauvais password !";
+                    $errors[] = "L'identifiant est incorrect";
+                } elseif (!$verified) {
+                    $errors[] = "Le mot de passe est incorrect";
                 } else {
                     $_SESSION['nickname'] = $nickname;
                     header('Location:' . $_COOKIE['previous']);
                 }
             } else {
-                $errors[] = "Merci de renseigner les champs";
+                $errors[] = "Merci de renseigner tous les champs";
             }
         }
         return $this->twig->render('Session/login.html.twig', ['errors' => $errors]);
