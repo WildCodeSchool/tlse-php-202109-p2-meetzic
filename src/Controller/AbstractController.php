@@ -36,8 +36,8 @@ abstract class AbstractController
     public function previousPage(): void
     {
          //Store current requested URL PATH in the cookie
-        if (filter_has_var(INPUT_SERVER, "PATH_INFO")) {
-            setcookie('previous', $_SERVER["PATH_INFO"]);
+        if (filter_has_var(INPUT_SERVER, "REQUEST_URI")) {
+            setcookie('previous', $_SERVER["REQUEST_URI"]);
         } else {
             setcookie('previous', "/");
         }
