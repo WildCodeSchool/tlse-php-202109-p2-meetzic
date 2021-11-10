@@ -5,7 +5,27 @@
 
 @font-face {
     font-family: textFont;
-    src: url("../fonts/Black\ Bones.ttf");
+    src: url("../fonts/Raleway-Medium.ttf");
+}
+
+div {
+    font-family: textFont;
+    font-size: 1.2rem;
+}
+
+h5, h1 {
+    font-family: titleFont;
+    font-size: 1.1rem;
+}
+
+h6 {
+    font-family: titleFont;
+    font-size: 0.9rem;
+}
+
+.card__profile {
+    font-family: titleFont;
+    font-size: 0.6rem;
 }
 
 /* style layout */
@@ -15,14 +35,6 @@ body {
     position: relative;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
-
-body h1, h2, h3, h4, h5, h6, .navBar__link {
-    font-family: titleFont;
-}
-
-.navBar__link {
-    font-size: 0.9rem;
 }
 
 @media screen and (min-width: 1024px) {

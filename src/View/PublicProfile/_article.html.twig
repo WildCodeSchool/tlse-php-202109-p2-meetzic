@@ -12,20 +12,20 @@
                         <div class="container">
                             <div class="row d-flex flex-wrap mt-lg-5">
                                 <div class="col-6">
-                                    <h5 class="card-title small font-italic text-muted">Pseudo</h5>
-                                    <p class="card-text">{{ tupple.nickname }}</p>
+                                    <h5 class="card-title card__profile small font-italic text-muted">Pseudo</h5>
+                                    <p class="card-text font-weight-bold">{{ tupple.nickname }}</p>
                                 </div>
                                 <div class="col-6">
-                                    <h5 class="card-title small font-italic text-muted">Instrument</h5>
-                                    <p class="card-text">{{ tupple.instrument }}</p>
+                                    <h5 class="card-title card__profile small font-italic text-muted">Instrument</h5>
+                                    <p class="card-text font-weight-bold">{{ tupple.instrument }}</p>
                                 </div>
                                 <div class="col-6 mt-2">
-                                    <h5 class="card-title small font-italic text-muted">Style musical</h5>
-                                    <p class="card-text">{{ tupple.style }}</p>
+                                    <h5 class="card-title card__profile small font-italic text-muted">Style musical</h5>
+                                    <p class="card-text font-weight-bold">{{ tupple.style }}</p>
                                 </div>
                                 <div class="col-6 mt-2">
-                                    <h5 class="card-title small font-italic text-muted">Groupe</h5>
-                                    <p class="card-text">
+                                    <h5 class="card-title card__profile small font-italic text-muted">Groupe</h5>
+                                    <p class="card-text font-weight-bold">
                                         {% if tupple.band == null %}
                                             Pas de groupe
                                         {% else %}
@@ -34,8 +34,8 @@
                                     </p>
                                 </div>
                                 <div class="col-6 mt-2">
-                                    <h5 class="card-title small font-italic text-muted">Disponibilité</h5>
-                                    <p class="card-text">
+                                    <h5 class="card-title card__profile small font-italic text-muted">Disponibilité</h5>
+                                    <p class="card-text font-weight-bold">
                                         {% if tupple.status == 0 %}
                                             Non disponible
                                         {% else %}
@@ -44,8 +44,8 @@
                                     </p>
                                 </div>
                                 <div class="col-6 mt-2">
-                                    <h5 class="card-title small font-italic text-muted">Experience</h5>
-                                    <p class="card-text">
+                                    <h5 class="card-title card__profile small font-italic text-muted">Experience</h5>
+                                    <p class="card-text font-weight-bold">
                                         {% if tupple.experience == 'beginner' %}
                                             Débutant
                                         {% elseif tupple.experience == 'advanced' %}
@@ -65,14 +65,14 @@
     <div class="row col-lg-12 order-lg-3">
         <div class="col-xs-12 col-sm-12 col-lg-6">
             <div class="card-body mt-lg-3"> 
-                <p class="card-text text-center">{{ tupple.description }}</p>
+                <p class="card-text text-center font-weight-bold">{{ tupple.description }}</p>
             </div>
         </div>
     </div>
     <div class="row col-lg-5 order-lg-2 mt-lg-5">
         <div class="col-xs-12 col-sm-12 col-lg-12 mt-lg-5">
             <div class="card border border-dark rounded shadow">
-                <div class="card-body">
+                <div class="card-body font-weight-bold">
                     <h5 class="card-title">{{ tupple.title }}</h5>
                     <p class="card-text">{{ tupple.annonce }}</p>
                 </div>
