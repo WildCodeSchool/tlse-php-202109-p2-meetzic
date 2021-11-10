@@ -11,6 +11,7 @@ class IndexController extends AbstractController
      */
     public function index()
     {
+
         if (!empty($_GET)) {
             if ($_GET['firstChoice'] === 'band') {
                 setcookie('firstChoice', 'band');
@@ -19,9 +20,7 @@ class IndexController extends AbstractController
             }
             header('Location: home');
         }
-        if (!empty($_COOKIE)) {
-            header('Location: home');
-        }
+
         return $this->twig->render('Index/index.html.twig');
     }
 }

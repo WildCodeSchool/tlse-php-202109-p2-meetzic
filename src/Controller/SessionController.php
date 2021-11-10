@@ -15,25 +15,28 @@ class SessionController extends AbstractController
     public function login()
     {
         //TODO : Faire appel base de donnée: nickname + password
-        define('LOGIN', 'tacos');
+        define('LOGIN', 'Yolodu31');
         define('PASSWORD', 'tacos');
+        //$PASSWORD = password_hash($PASSWORD, $PASSWORD_DEFAUT);
 
         // Check POST datas
+        $errors = [];
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (!empty($_POST['nickname']) && !empty($_POST['password'])) {
                 $nickname = $this->cleanPostData($_POST['nickname']);
                 $password = $this->cleanPostData($_POST['password']);
+                //$password = password_verify($PASSWORD, $PASSWORD_DEFAUT);
 
                 if ($nickname !== LOGIN) {
-                    throw new Exception("Mauvais identifiant !");
+                    $errors[] = "Mauvais identifiant !";
                 } elseif ($password !== PASSWORD) {
-                    throw new Exception("Mauvais password !");
+                    $errors[] = "Mauvais password !";
                 } else {
                     $_SESSION['nickname'] = $nickname;
                     header('Location:' . $_COOKIE['previous']);
                 }
             } else {
-                throw new Exception("Merci de renseigner les champs");
+                $errors[] = "Merci de renseigner les champs";
             }
         }
         return $this->twig->render('Session/login.html.twig');

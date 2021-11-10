@@ -12,8 +12,15 @@ div {
     font-family: textFont;
     font-size: 1.2rem;
 }
-h5{
+
+h5, h1 {
     font-family: titleFont;
+    font-size: 1.1rem;
+}
+
+h6 {
+    font-family: titleFont;
+    font-size: 0.9rem;
 }
 
 /* style layout */
