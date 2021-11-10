@@ -5,7 +5,15 @@
 
 @font-face {
     font-family: textFont;
-    src: url("../fonts/Black\ Bones.ttf");
+    src: url("../fonts/Raleway-Medium.ttf");
+}
+
+div {
+    font-family: textFont;
+    font-size: 1.2rem;
+}
+h5{
+    font-family: titleFont;
 }
 
 .footer {

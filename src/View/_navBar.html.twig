@@ -9,13 +9,19 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">      
       <li class="nav-item mx-lg-5 px-lg-5">
-        <a class="nav-link font-weight-bold" href="/home">Rechercher une annonce</a>
+        <a class="nav-link font-weight-bold" href="home">Rechercher une annonce</a>
       </li>
       <li class="nav-item mx-lg-5 px-lg-5">
         <a class="nav-link font-weight-bold" href="#">Déposer une annonce</a>
       </li>
-      <li class="nav-item mx-lg-5 px-lg-5"> {# ajouter active pour mettre en surbrillance la page où on se trouve #}
-        <a class="nav-link font-weight-bold" href="#">Se connecter</a>
+      <li class="nav-item mx-lg-5 px-lg-5">
+        <a class="nav-link font-weight-bold" href="{{ redirection }}">
+            {% if connected == true %}
+                Mon profil
+            {% else %}
+                Se connecter
+            {% endif %}
+        </a>
       </li>
     </ul>     
   </div>

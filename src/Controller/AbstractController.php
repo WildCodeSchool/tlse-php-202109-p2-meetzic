@@ -24,5 +24,64 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new DebugExtension());
+        $this->startSession();
+        $this->varTwig();
+    }
+
+    /**
+     * Save the previous page visited in cookie
+     *
+     * @return void
+     */
+    public function previousPage(): void
+    {
+         //Store current requested URL PATH in the cookie
+        if (filter_has_var(INPUT_SERVER, "PATH_INFO")) {
+            setcookie('previous', $_SERVER["PATH_INFO"]);
+        } else {
+            setcookie('previous', "/");
+        }
+    }
+
+    /**
+     * Start a session
+     *
+     * @return void
+     */
+    public function startSession(): void
+    {
+        session_start();
+    }
+
+    /**
+     * Use to clean data from POST ?
+     *
+     * @param  string $data
+     * @return string
+     */
+    public function cleanPostData(string $data): string
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+
+    /**
+     * Define variables to be use in twig
+     *
+     * @return void
+     */
+    public function varTwig(): void
+    {
+        if (!empty($_SESSION)) {
+            $redirection = "private";
+            $connected = true;
+        } else {
+            $redirection = "login";
+            $connected = false;
+        }
+        $this->twig->addGlobal('redirection', $redirection);
+        $this->twig->addGlobal('connected', $connected);
     }
 }
