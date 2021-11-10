@@ -1,11 +1,82 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <main class="container">
+<div class="container">
+    <form action="" method="get">
+        <div class="row, center-block">  
+            <div class="col-xs-12">
+                <div class="input-group">
+                    <div class="input-group mb-3">
+                        <input type="text" name="'query" class="form-control"  placeholder="Rechercher..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Go !</button>
+                    </div>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div><!-- /.row -->    
+          
+        <div class="container-fluid">
+            <div class="row">
+                <div class="row, col-xs-4">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Instrument
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <button class="dropdown-item" type="button">Guitare</button>
+                                <button class="dropdown-item" type="button">Batterie</button>
+                                <button class="dropdown-item" type="button">Basse</button>
+                                <button class="dropdown-item" type="button">Chant</button>
+                                <button class="dropdown-item" type="button">Piano</button>
+                                <button class="dropdown-item" type="button">Batterie</button>
+                                <button class="dropdown-item" type="button">Cuivres</button>
+                                <button class="dropdown-item" type="button">Percussion</button>
+                                <button class="dropdown-item" type="button">Accordéon</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="row, col-xs-4">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Genre
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <button class="dropdown-item" type="button">Rock</button>
+                                <button class="dropdown-item" type="button">Pop</button>
+                                <button class="dropdown-item" type="button">Metal</button>
+                                <button class="dropdown-item" type="button">Funk</button>
+                                <button class="dropdown-item" type="button">Soul</button>
+                                <button class="dropdown-item" type="button">Hard-Rock</button>
+                                <button class="dropdown-item" type="button">Punk-Rock</button>
+                                <button class="dropdown-item" type="button">Electro</button>
+                                <button class="dropdown-item" type="button">Disco</button>
+                                <button class="dropdown-item" type="button">Reggae</button>
+                                <button class="dropdown-item" type="button">Musette</button>
+                                <button class="dropdown-item" type="button">Jazz</button>
+                                <button class="dropdown-item" type="button">Classique</button>
+                            </div>
+                        </div>
+                </div>
+                <div class="row, col-xs-4">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Expérience
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <button class="dropdown-item" type="button">Débutant</button>
+                                <button class="dropdown-item" type="button">Avancé</button>
+                                <button class="dropdown-item" type="button">Expert</button>
+                            </div>
+                        </div>
+                </div>    
+            </div>
+        </div>
+    </form>
+</div>            
+<main class="container">
         <section class="row row-col-1 row-col-lg-2 mt-4">
             {% for ad in ads %}
                 {% include "_adCard.html.twig" %} 
             {% endfor %}   
         </section>
-    </main>    
+</main>    
 {% endblock %}
