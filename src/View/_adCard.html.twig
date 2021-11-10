@@ -1,19 +1,23 @@
 <article class="adCard">
-    <div class="container">
-        <div class="card mb-3" style="max-width: 540px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src={{ ad['avatar'] }} class="img-fluid rounded-start" alt="user_picture">    
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ ad['title'] }}</h5>
-                        <p class="card-text">{{ ad['description'] }}</p>
+    <a href= "profile/show?id={{ ad['id'] }}" class="text-decoration-none text-dark">
+        <div class="container">
+            <div class="card mb-3 border border-dark rounded-lg shadow-lg" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-12 col-sm-12">
+                        <h5 class="card-title text-left title__adCard">{{ ad['title'] }}</h5>
+                    </div>
+                    <div class="col-3 col-sm-3">
+                        <img id="image__adCard" src={{ ad['avatar'] }} class="img-fluid rounded-start" alt="user_picture">    
+                    </div>
+                    <div class="col-8 col-sm-9">
+                        <div class="body__adCard">
+                            <p class="card-text text-left description__adCard">{{ ad['description'] }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>        
-    </div>
+            </div>        
+        </div>
+    </a>
 </article>
 <form action="" method="get">
     <div class="container">
