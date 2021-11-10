@@ -38,4 +38,11 @@ class AdModel extends AbstractManager
         $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function getSearch(): array
+    {
+        $statement = $this->pdo->query('SELECT * FROM WhereIsMYBand ORDER BY id DESC');
+        $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        return $result;
+    }
 }
