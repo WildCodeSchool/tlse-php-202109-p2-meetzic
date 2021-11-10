@@ -18,6 +18,8 @@ class ProfileController extends AbstractController
 
     public function profileView()
     {
+        $this->previousPage();
+
         return $this->twig->render('PrivateProfile/privateProfile.html.twig');
     }
 }
