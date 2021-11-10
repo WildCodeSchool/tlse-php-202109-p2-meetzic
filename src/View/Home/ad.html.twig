@@ -2,8 +2,8 @@
 
 {% block content %}
 <div class="container">
-     <form action="" method="get">
-        <div class =  "row, center-block">  
+    <form action="" method="get">
+        <div class="row, center-block">  
             <div class="col-xs-12">
                 <div class="input-group">
                     <div class="input-group mb-3">
@@ -15,8 +15,8 @@
         </div><!-- /.row -->    
           
         <div class="container-fluid">
-            <div class = "row">
-                <div class = "row, col-xs-4">
+            <div class="row">
+                <div class="row, col-xs-4">
                         <div class="btn-group">
                             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Instrument
@@ -34,7 +34,7 @@
                             </div>
                         </div>
                 </div>
-                <div class = "row, col-xs-4">
+                <div class="row, col-xs-4">
                         <div class="btn-group">
                             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Genre
@@ -56,7 +56,7 @@
                             </div>
                         </div>
                 </div>
-                <div class = "row, col-xs-4">
+                <div class="row, col-xs-4">
                         <div class="btn-group">
                             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Expérience
@@ -67,19 +67,16 @@
                                 <button class="dropdown-item" type="button">Expert</button>
                             </div>
                         </div>
-                </div>
-                
+                </div>    
             </div>
         </div>
-</div>            
-             
     </form>
-
-    <main class="container">
-        <section class="row row-cols-1 row-cols-lg-2">
-            {% for ad in ads %}
-                {% include "_adCard.html.twig" %} 
-            {% endfor %}   
-        </section>
-    </main>    
+</div>            
+<main class="container">
+    <section class="row row-cols-1 row-cols-lg-2">
+        {% for ad in ads %}
+            {% include "_adCard.html.twig" %} 
+        {% endfor %}   
+    </section>
+</main>    
 {% endblock %}
