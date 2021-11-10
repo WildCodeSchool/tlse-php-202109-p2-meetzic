@@ -81,6 +81,7 @@ abstract class AbstractController
             $redirection = "login";
             $connected = false;
         }
+
         $this->twig->addGlobal('redirection', $redirection);
         $this->twig->addGlobal('connected', $connected);
     }
