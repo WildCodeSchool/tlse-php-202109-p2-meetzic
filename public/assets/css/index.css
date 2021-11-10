@@ -1,8 +1,8 @@
 .index__h1 {
     margin: 1.2rem;
-    font-size: 2rem;
+    font-size: 1.2rem;
     text-align: center;
-    font-family: textFont;
+    font-family: titleFont;
 }
 
 .index__ul {
@@ -57,12 +57,12 @@
 
 @media screen and (min-width: 1200px) {
     .index__h1 {
-        margin: 2rem;
-        font-size: 4rem;
+        margin: 2.5rem;
+        font-size: 3rem;
     }
 
     .index__img {
-        height: 26em;
+        height: 24em;
         -webkit-transition:all .5s cubic-bezier(.6,2,.4,1);
             -moz-transition:all .5s cubic-bezier(.6,2,.4,1);
                 -ms-transition:all .5s cubic-bezier(.6,2,.4,1);

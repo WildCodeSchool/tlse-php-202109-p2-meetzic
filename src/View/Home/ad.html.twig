@@ -1,20 +1,20 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-<div class="container">
-    <form action="" method="get">
+<div class="container mt-lg-5 mt-4">
+    <form  action="" method="get">
         <div class="row, center-block">  
             <div class="col-xs-12">
                 <div class="input-group">
                     <div class="input-group mb-3">
-                        <input type="text" name="'query" class="form-control"  placeholder="Rechercher..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <input type="text" name="'query" class="form-control border shadow"  placeholder="Rechercher..." aria-label="Recipient's username" aria-describedby="button-addon2">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon2">Go !</button>
                     </div>
                 </div>
             </div>
         </div>   
           
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
                 <div class="row, col-xs-4">
                         <div class="btn-group">
@@ -73,10 +73,10 @@
     </form>
 </div>            
 <main class="container">
-    <section class="row row-cols-1 row-cols-lg-2">
-        {% for ad in ads %}
-            {% include "_adCard.html.twig" %} 
-        {% endfor %}   
-    </section>
+        <section class="row row-col-1 row-col-lg-2 mt-4">
+            {% for ad in ads %}
+                {% include "_adCard.html.twig" %} 
+            {% endfor %}   
+        </section>
 </main>    
 {% endblock %}
