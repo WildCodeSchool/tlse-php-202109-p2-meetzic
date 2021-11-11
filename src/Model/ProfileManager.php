@@ -24,7 +24,7 @@ class ProfileManager extends AbstractManager
         return $tupple;
     }
 
-    public function editTableMusician(array $valuesInput): int
+    public function editProfile(array $valuesInput): int
     {
         $statement = $this->pdo->prepare(
             'INSERT INTO musician
@@ -53,7 +53,7 @@ class ProfileManager extends AbstractManager
         return (int)$this->pdo->lastInsertId();
     }
 
-    public function editBand(array $band): int
+    public function insertBand(array $band): int
     {
         $statement = $this->pdo->prepare(
             'INSERT INTO band
