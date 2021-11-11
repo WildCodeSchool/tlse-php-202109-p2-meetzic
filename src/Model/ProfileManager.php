@@ -23,4 +23,51 @@ class ProfileManager extends AbstractManager
 
         return $tupple;
     }
+
+    public function editTableMusician(array $valuesInput): int
+    {
+        $statement = $this->pdo->prepare(
+            'INSERT INTO musician
+            (nickname, password, email, avatar, experience, description, status, instrument_id, band_id)
+            VALUES (
+            ":nickname", ":password", ":email", ":avatar", ":experience", ":description", ":status", 
+            (SELECT instrument.id 
+            FROM instrument 
+            WHERE instrument.name = ":instrument"), 
+            (SELECT band.id 
+            FROM band 
+            WHERE band.name = ":groupe")
+            );'
+        );
+        $statement->bindValue(':nickname', $valuesInput['nickname'], \PDO::PARAM_STR);
+        $statement->bindValue(':password', $valuesInput['password'], \PDO::PARAM_STR);
+        $statement->bindValue(':email', $valuesInput['email'], \PDO::PARAM_STR);
+        $statement->bindValue(':avatar', $valuesInput['avatar'], \PDO::PARAM_STR);
+        $statement->bindValue(':experience', $valuesInput['experience'], \PDO::PARAM_INT);
+        $statement->bindValue(':description', $valuesInput['description'], \PDO::PARAM_STR);
+        $statement->bindValue(':status', $valuesInput['status'], \PDO::PARAM_INT);
+        $statement->bindValue(':instrument', $valuesInput['instrument'], \PDO::PARAM_INT);
+        $statement->bindValue(':groupe', $valuesInput['groupe'], \PDO::PARAM_INT);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
+    }
+
+    public function editBand(array $band): int
+    {
+        $statement = $this->pdo->prepare(
+            'INSERT INTO band
+            (name, description, status)
+            VALUES (
+            ":nameBand", 
+            ":descriptionBand", 
+            ":statusBand");'
+        );
+        $statement->bindValue(':nameBand', $band['nameBand'], \PDO::PARAM_STR);
+        $statement->bindValue(':descriptionBand', $band['descriptionBand'], \PDO::PARAM_STR);
+        $statement->bindValue(':statusBand', $band['statusBand'], \PDO::PARAM_INT);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
+    }
 }
