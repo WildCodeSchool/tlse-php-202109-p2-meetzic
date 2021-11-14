@@ -16,4 +16,6 @@ return [
     'private' => ['ProfileController', 'profileView'],
     'login' => ['SessionController', 'login'],
     'new' => ['SessionController', 'creation'],
+    'private/add' => ['ProfileController', 'addProfile'],
+    'private/show' => ['ProfileController', 'showProfileValidate', ['id']],
 ];
