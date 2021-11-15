@@ -28,9 +28,9 @@ class ProfileManager extends AbstractManager
     {
         $statement = $this->pdo->prepare(
             'INSERT INTO musician
-            (nickname, password, email, avatar, experience/*, description*/, status, instrument_id)
+            (nickname, password, email, avatar, experience, description, status, instrument_id)
             VALUES 
-            (:nickname, :password, :email, :avatar, :experience/*, :description*/, :status, 
+            (:nickname, :password, :email, :avatar, :experience, :description, :status, 
             (SELECT :instrument 
             FROM instrument 
             WHERE instrument.id = :instrument));'
@@ -40,7 +40,7 @@ class ProfileManager extends AbstractManager
         $statement->bindValue(':email', $valuesInput['email'], \PDO::PARAM_STR);
         $statement->bindValue(':avatar', $valuesInput['avatar'], \PDO::PARAM_STR);
         $statement->bindValue(':experience', $valuesInput['experience'], \PDO::PARAM_STR);
-        //$statement->bindValue(':description', $valuesInput['description'], \PDO::PARAM_STR);
+        $statement->bindValue(':description', $valuesInput['description'], \PDO::PARAM_STR);
         $statement->bindValue(':status', $valuesInput['status'], \PDO::PARAM_INT);
         $statement->bindValue(':instrument', $valuesInput['instrument'], \PDO::PARAM_INT);
 
