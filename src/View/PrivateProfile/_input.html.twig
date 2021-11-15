@@ -1,103 +1,100 @@
-<form class="row g-3" action="profile/show" method="post">
-    <div class="col-xs-5">
-        <img src="" alt="picture of artist" class="border border-dark rounded shadow">
-    </div>
-    <div class="col-xs-7">
-        <h3>Bonjour ...</h3>
-        <p>Veuillez ajouter certaines informations sur votre profil</p>    
-    </div>
-    <div class="col-xs-6">
-        <label for="nickname" class="form-label">Pseudo :
-            <input type="text" class="form-control" id="nickname" name="nickname" value="" placeholder="pseudo" required>
+<div class="container">
+    <form class="row g-3" action="/private/add" method="post">
+        <div class="col-xs-5">
+            <label for="avatar">   
+                <input type="file" class="form-control" id="avatar" name="avatar" value="{{ valuesInput.avatar }}">
+            </label>
+        </div>
+        <div class="col-xs-7">
+            <h3>Bonjour {{ valuesInput.nickname }}</h3>
+            <p>Veuillez ajouter certaines informations sur votre profil</p>    
+        </div>
+        <div class="col-xs-6">
+            <label for="nickname" class="form-label">Pseudo :
+                <input type="text" class="form-control" id="nickname" name="nickname" value="{{ valuesInput.nickname }}" placeholder="pseudo" required>
+            </label>
+        </div>
+        <div class="col-xs-6">
+            <label for="password" class="form-label">Mot de passe :
+                <input type="password" class="form-control" id="password" name="password" value="{{ valuesInput.password }}" placeholder="*********" required>
+            </label>
+        </div>
+        <div class="col-xs-12">
+            <label for="email" class="form-label">E-mail :
+                <input type="email" class="form-control" id="email" name="email" value="{{ valuesInput.email }}" placeholder="mail@mail.fr" required>
+            </label>
+        </div>
+        <div class="col-xs-6">
+            <label for="" class="form-label">Nom du groupe :
+                <input type="text" class="form-control" id="" name="" value="" placeholder="nom du groupe">
+            </label>
+        </div>
+        <div class="col-xs-6">
+            <label for="instrument" class="form-label">Instrument :
+                <select id="instrument" class="form-select" name="instrument" required>
+                    <option selected value="null">-- Veuillez choisir --</option>
+                    <option value="1">Guitare</option>
+                    <option value="2">Batterie</option>
+                    <option value="3">Basse</option>
+                    <option value="4">Chant</option>
+                    <option value="5">Piano</option>
+                    <option value="6">Clavier</option>
+                    <option value="7">Cuivres</option>
+                    <option value="8">Percussion</option>
+                    <option value="9">Accordéon</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-6">
+            <label for="experience" class="form-label">Niveau d'experience :
+                <select id="experience" class="form-select" name="experience" required>
+                    <option selected value="null">-- Veuillez choisir --</option>
+                    <option value="beginner">Débutant</option>
+                    <option value="advanced">Confirmé</option>
+                    <option value="expert">Expert</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-6">
+            <label for="status" class="form-label">Disponibilité :
+                <select id="status" class="form-select" name="status" required>
+                    <option selected value="null">-- Veuillez choisir --</option>
+                    <option value="1">Disponible</option>
+                    <option value="0">Non disponible</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-6">
+            <label for="genre" class="form-label">Genre musical :
+                <select id="genre" class="form-select" name="genre">
+                    <option selected value="">-- Veuillez choisir --</option>
+                    <option value="1">Rock</option>
+                    <option value="2">Pop</option>
+                    <option value="3">Metal</option>
+                    <option value="4">Funk</option>
+                    <option value="5">Soul</option>
+                    <option value="6">Hard-rock</option>
+                    <option value="7">Punk-rock</option>
+                    <option value="8">Electro</option>
+                    <option value="9">Disco</option>
+                    <option value="10">Reggae</option>
+                    <option value="11">Musette</option>
+                    <option value="12">Jazz</option>
+                    <option value="13">Classique</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-11">
+        <label for="description" class="form-label">Description :
+            <textarea type="textarea" class="form-control" id="description" name="description"> 
+                {{ valuesInput.description }}    
+            </textarea>
         </label>
-    </div>
-    <div class="col-xs-6">
-        <label for="password" class="form-label">Mot de passe :
-            <input type="password" class="form-control" id="password" name="password" value="" placeholder="*********" required>
-        </label>
-    </div>
-    <div class="col-xs-6">
-        <label for="firstname" class="form-label">Prénom :
-            <input type="text" class="form-control" id="firstname" name="firstname" value="" placeholder="prénom" required>
-        </label>
-    </div>
-    <div class="col-xs-6">
-        <label for="lastname" class="form-label">Nom :
-            <input type="text" class="form-control" id="lastname" name="lastname" value="" placeholder="nom">
-        </label>
-    </div>
-    <div class="col-xs-12">
-        <label for="mail" class="form-label">E-mail :
-            <input type="email" class="form-control" id="mail" name="mail" value="" placeholder="mail@mail.fr" required>
-        </label>
-    </div>
-    <div class="col-xs-6">
-        <label for="band" class="form-label">Groupe :
-            <select id="band" class="form-select" name="band">
-                <option value="">Je suis dans un groupe</option>
-                <option value="">Je ne suis pas dans un groupe</option>
-            </select>
-        </label>
-    </div>
-    <div class="col-xs-6">
-        <label for="instrument" class="form-label">Instrument :
-            <select id="instrument" class="form-select" name="instrument" required>
-                <option value="">Guitare</option>
-                <option value="">Batterie</option>
-                <option value="">Basse</option>
-                <option value="">Chant</option>
-                <option value="">Piano</option>
-                <option value="">Clavier</option>
-                <option value="">Cuivres</option>
-                <option value="">Percussion</option>
-                <option value="">Accordéon</option>
-            </select>
-        </label>
-    </div>
-    <div class="col-xs-6">
-        <label for="experience" class="form-label">Niveau d'experience :
-            <select id="experience" class="form-select" name="experience" required>
-                <option value="">Débutant</option>
-                <option value="">Confirmé</option>
-                <option value="">Expert</option>
-            </select>
-        </label>
-    </div>
-    <div class="col-xs-6">
-        <label for="status" class="form-label">Disponibilité :
-            <select id="status" class="form-select" name="status" required>
-                <option value="">Disponible</option>
-                <option value="">Non disponible</option>
-            </select>
-        </label>
-    </div>
-    <div class="col-xs-6">
-        <label for="genre" class="form-label">Genre musical :
-            <select id="genre" class="form-select" name="genre">
-                <option value="">Rock</option>
-                <option value="">Pop</option>
-                <option value="">Metal</option>
-                <option value="">Funk</option>
-                <option value="">Soul</option>
-                <option value="">Hard-rock</option>
-                <option value="">Punk-rock</option>
-                <option value="">Electro</option>
-                <option value="">Disco</option>
-                <option value="">Reggae</option>
-                <option value="">Musette</option>
-                <option value="">Jazz</option>
-                <option value="">Classique</option>
-            </select>
-        </label>
-    </div>
-    <div class="col-xs-11">
-    <label for="description" class="form-label">Disponibilité :
-        <textarea type="textarea" class="form-control" id="description" name="description">
-            value=""
-        </textarea>
-    </label>
-    </div>
-    <div class="col-12">
-        <button type="submit" class="btn btn-primary">Valider</button>
-    </div>
-</form>
+        </div>
+        <div class="col-12">
+            <a href="/private/add">
+            <button type="submit" class="btn btn-primary">Valider</button>
+            </a>
+        </div>
+    </form>
+</div>
