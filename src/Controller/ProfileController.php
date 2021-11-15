@@ -23,4 +23,40 @@ class ProfileController extends AbstractController
 
         return $this->twig->render('PrivateProfile/privateProfile.html.twig');
     }
+
+    public function addProfile(): string
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $valuesInput = array_map('trim', $_POST);
+
+            $profileManager = new ProfileManager();
+            $id = $profileManager->editProfile($valuesInput);
+            header('Location:/private/show?id=' . $id);
+        }
+
+        return $this->twig->render('PrivateProfile/privateProfile.html.twig');
+    }
+
+    public function addBand(): string
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $band = array_map('trim', $_POST);
+
+            $profileManager = new ProfileManager();
+            $id = $profileManager->insertBand($band);
+            header('Location:/profile?id=' . $id);
+        }
+
+        return $this->twig->render('PrivateProfile/add.html.twig');
+    }
+
+    public function showProfileValidate(int $id): string
+    {
+        $this->previousPage();
+
+        $profileManager = new ProfileManager();
+        $input = $profileManager->selectAllInputValidateProfile($id);
+
+        return $this->twig->render('PrivateProfile/privateValidate.html.twig', ['input' => $input]);
+    }
 }
