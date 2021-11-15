@@ -9,7 +9,7 @@
 return [
     '' => ['IndexController', 'index',],
     'home' => ['AdController', 'browse',],
-    'home/search' => ['AdController', 'browse', ['search']],
+    'home/search' => ['AdController', 'browseBySearch', ['query']],
     'profile/show' => ['ProfileController', 'show', ['id']],
     'private' => ['PrivateController', 'test'],
 ];
