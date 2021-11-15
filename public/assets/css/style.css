@@ -5,15 +5,88 @@
 
 @font-face {
     font-family: textFont;
-    src: url("../fonts/Black\ Bones.ttf");
+    src: url("../fonts/Raleway-Medium.ttf");
 }
 
-.footer {
-    background-color: #303030;
+html {
+    height: 100%;
+}
+
+div {
+    font-family: textFont;
+    border-radius: 10px;
+}
+
+h5, h1 {
+    font-family: titleFont;
+    font-size: 1.1rem;
+}
+
+h6 {
+    font-family: titleFont;
+    font-size: 0.9rem;
+}
+
+.card__profile {
+    font-family: titleFont;
+    font-size: 0.6rem;
+}
+
+/* style layout */
+.layout__background {
+    background-image: url("../images/banner-bg.jpg");
+    background-size: 100vw 100vh;
+    position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+@media screen and (min-width: 1024px) {
+    .navbar__nav {
+        max-width: 1200px;
+        margin-left: 10rem;
+    }
+    
+    nav img {
+        top:-2.5rem;
+        left:-2rem;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    nav img {
+        height : 5rem;
+        top: 0rem;
+        left: 0rem;
+    }
+
+    .layout__background {
+        background-image: url("../images/banner-bg.jpg");
+        background-size: cover;
+        position: relative;
+        background-position-x: center;  
+    }
+}
+
+nav button {
+    border : none;
+}
+
+button {
+    height: 2.5rem;
 }
 
 .body__adCard {
-    height: 8rem; 
+    height: 9rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 #image__adCard {
@@ -33,4 +106,40 @@
     margin-right: 0.8rem;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.seachBtn {
+    margin-top: 2rem;
+}
+
+#about {
+    color: white;
+    background-color: black;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.about__exitImg {
+    width: 2.5rem; 
+    height: auto;
+    margin-top: 1rem;
+}
+
+.about__anonymousImg {
+    width: 100%;
+}
+
+.about__title{
+    text-shadow: 2px 2px 2px orangered;
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+}
+
+.about__text{
+    text-align: center;
+}
+.about__sign{
+    text-shadow: 2px 2px 2px orangered;
+    text-align: right;
+    margin-right: 1rem;
 }

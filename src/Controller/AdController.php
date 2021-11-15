@@ -8,6 +8,8 @@ class AdController extends AbstractController
 {
     public function browse()
     {
+        $this->previousPage();
+
         $adModel = new AdModel();
         if (!empty($_COOKIE)) {
             if ($_COOKIE['firstChoice'] === 'band') {
