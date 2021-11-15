@@ -32,5 +32,5 @@
 .description__adCard {
     margin-right: 0.8rem;
     overflow: hidden;
-  text-overflow: ellipsis;
+    text-overflow: ellipsis;
 }

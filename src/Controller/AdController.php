@@ -27,21 +27,21 @@ class AdController extends AbstractController
     public function browseBySearch(string $query)
     {
         $adModel = new AdModel();
-        if (!empty($query)) {
-            if ($_COOKIE['firstChoice'] === 'band') {
+        $choice = isset($_COOKIE['firstChoice']) ? $_COOKIE['firstChoice'] : null;
+        $ads = $adModel->getAll();
+        if (empty($query)) {
+            if ($choice === 'band') {
+                $ads = $adModel->getAdMusician();
+            } else {
+                $ads = $adModel->getAdBand();
+            }
+        } else {
+            if ($choice === 'band') {
                 $ads = $adModel->getAdMusicianSearch($query);
-                return $this->twig->render('Home/adsearch.html.twig', ['ads' => $ads]);
-            }
-            if ($_COOKIE['firstChoice'] === 'musician') {
+            } else {
                 $ads = $adModel->getAdBandSearch($query);
-                return $this->twig->render('Home/adsearch.html.twig', ['ads' => $ads]);
             }
-        } elseif ($_COOKIE['firstChoice'] === 'band') {
-            $ads = $adModel->getAdMusician();
-            return $this->twig->render('Home/adsearch.html.twig', ['ads' => $ads]);
-        } elseif ($_COOKIE['firstChoice'] === 'musician') {
-            $ads = $adModel->getAdBand();
-            return $this->twig->render('Home/adsearch.html.twig', ['ads' => $ads]);
         }
+        return $this->twig->render('Home/ad.html.twig', ['ads' => $ads]);
     }
 }
