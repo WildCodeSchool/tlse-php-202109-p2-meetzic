@@ -17,6 +17,7 @@ class ProfileController extends AbstractController
     }
 
     public function profileView()
+    
     {
         $this->previousPage();
 
