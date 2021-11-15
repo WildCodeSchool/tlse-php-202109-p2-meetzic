@@ -1,0 +1,63 @@
+<div class="container">   
+    <div class="col-xs-5">
+        <label for="avatar">   
+            <img src="{{ input.avatar }}" alt="picture of artist" class="img-fluid img-thumbnail h-150 border border-dark rounded shadow">
+        </label>
+    </div>
+    <div class="col-xs-7">
+        <h3>Bonjour {{ input.nickname }}</h3>
+        <p>Bienvenue sur votre profil !</p>    
+    </div>
+    <div class="col-xs-6">
+        <label for="nickname" class="form-label">Pseudo :
+            <input type="text" class="form-control" id="nickname" name="nickname" value="{{ input.nickname }}" disabled>
+        </label>
+    </div>
+    <div class="col-xs-6">
+        <label for="password" class="form-label">Mot de passe :
+            <input type="password" class="form-control" id="password" name="password" value="{{ input.password }}" disabled>
+        </label>
+    </div>
+    <div class="col-xs-12">
+        <label for="email" class="form-label">E-mail :
+            <input type="email" class="form-control" id="email" name="email" value="{{ input.email }}" disabled>
+        </label>
+    </div>       
+    <div class="col-xs-6">
+        <label for="nameBand" class="form-label">Nom du groupe :
+            <input type="text" class="form-control" id="nameBand" name="band" value="{{ input.band }}" disabled>
+        </label>
+    </div>       
+    <div class="col-xs-6">
+        <label for="instrument" class="form-label">Instrument :
+            <input type="text" class="form-control" id="instrument" name="instrument" value="{{ input.instrument }}" disabled>
+        </label>
+    </div>       
+    <div class="col-xs-6">
+        <label for="experience" class="form-label">Experience :
+            <input type="text" class="form-control" id="experience" name="experience" value="{{ input.experience }}" disabled>
+        </label>
+    </div>       
+    <div class="col-xs-6">
+        <label for="status" class="form-label">Disponible :
+            <input type="text" class="form-control" id="status" name="status" 
+            value=" {% if input.status == 0 %}
+                        Non disponible
+                    {% else %}
+                        Disponible
+                    {% endif %}" disabled>
+        </label>
+    </div>       
+    <div class="col-xs-6">
+        <label for="genre" class="form-label">Genre musical :
+            <input type="text" class="form-control" id="genre" name="style" value="{{ input.style }}" disabled>
+        </label>
+    </div>       
+    <div class="col-xs-6">
+        <label for="description" class="form-label">Description :
+            <texterea type="text" class="form-control" id="description" name="description" disabled>
+                {{ input.description }}
+            </texterea>
+        </label>
+    </div>             
+</div>
