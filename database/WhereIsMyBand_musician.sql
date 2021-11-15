@@ -26,7 +26,7 @@ CREATE TABLE `musician` (
   `id` int NOT NULL AUTO_INCREMENT,
   `nickname` varchar(45) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
+  `email` varchar(100),
   `avatar` varchar(255) DEFAULT NULL,
   `experience` enum('beginner','advanced','expert') NOT NULL DEFAULT 'beginner',
   `description` text,

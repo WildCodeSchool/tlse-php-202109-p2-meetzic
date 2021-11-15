@@ -16,4 +16,5 @@ return [
     'private' => ['ProfileController', 'profileView'],
     'login' => ['SessionController', 'login'],
     'new' => ['SessionController', 'creation'],
+    'about' => ['AboutController', 'about'],
 ];
