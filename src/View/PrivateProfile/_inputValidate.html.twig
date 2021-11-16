@@ -1,9 +1,16 @@
 <div class="container">   
     <div class="col-xs-5">
-        <label for="avatar">   
-            <img src="{{ input.avatar }}" alt="picture of artist" class="img-fluid img-thumbnail h-150 border border-dark rounded shadow">
+        <label for="avatar">
+            {% if input.avatar == null %}
+                <img src="https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png" alt="picture of artist" class="img-fluid img-thumbnail h-150 border border-dark rounded shadow">
+            {% else %}
+                <img src="{{ input.avatar }}" alt="picture of artist" class="img-fluid img-thumbnail h-150 border border-dark rounded shadow">
+            {% endif %}   
         </label>
     </div>
+    <pre>
+        {{ dump(input) }}
+    </pre>
     <div class="col-xs-7">
         <h3>Bonjour {{ input.nickname }}</h3>
         <p>Bienvenue sur votre profil !</p>    
@@ -23,9 +30,13 @@
             <input type="email" class="form-control" id="email" name="email" value="{{ input.email }}" disabled>
         </label>
     </div>       
-    <div class="col-xs-6">
-        <label for="nameBand" class="form-label">Nom du groupe :
-            <input type="text" class="form-control" id="nameBand" name="band" value="{{ input.band }}" disabled>
+    <div class="col-xs-6" style="{% if input.band == null %}
+                                    display:none
+                                {% else %}
+                                    display:block
+                                {% endif %}">
+        <label for="band" class="form-label">Nom du groupe :
+            <input type="text" class="form-control" id="band" name="band" value="{{ input.band }}" disabled>
         </label>
     </div>       
     <div class="col-xs-6">
@@ -49,8 +60,8 @@
         </label>
     </div>       
     <div class="col-xs-6">
-        <label for="genre" class="form-label">Genre musical :
-            <input type="text" class="form-control" id="genre" name="style" value="{{ input.style }}" disabled>
+        <label for="style" class="form-label">Genre musical :
+            <input type="text" class="form-control" id="style" name="style" value="{{ input.style }}" disabled>
         </label>
     </div>       
     <div class="col-xs-6">

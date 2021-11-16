@@ -1,5 +1,10 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    {% include "PrivateProfile/_input.html.twig" %} 
+    {% include "PrivateProfile/_input.html.twig" %}
+    {% include "PrivateProfile/_cardAd.html.twig" %} 
+{% endblock %}
+
+{% block javascript %}
+    <script src="/assets/js/privateProfile.js"></script>
 {% endblock %}
