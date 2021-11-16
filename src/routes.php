@@ -20,4 +20,5 @@ return [
     'about' => ['AboutController', 'about'],
     'private/add' => ['ProfileController', 'addProfile'],
     'private/show' => ['ProfileController', 'showProfileValidate', ['id']],
+    'private/delete' => ['ProfilController', 'deleteById', ['id']],
 ];
