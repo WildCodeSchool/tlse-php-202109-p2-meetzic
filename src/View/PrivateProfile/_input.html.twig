@@ -25,8 +25,17 @@
             </label>
         </div>
         <div class="col-xs-6">
-            <label for="" class="form-label">Nom du groupe :
-                <input type="text" class="form-control" id="" name="" value="" placeholder="nom du groupe">
+            <label for="band" class="form-label">Avez vous un groupe :
+                <select id="band" class="form-select" name="band" onchange="showDiv(this)" required>
+                    <option selected value="">-- Veuillez choisir --</option>
+                    <option value="1">Je suis dans un groupe</option>
+                    <option value="0">Je ne suis pas dans un groupe</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-xs-6" id="hiddenDiv" style="display:none">
+            <label for="bandName" class="form-label">Nom du groupe :
+                <input type="text" class="form-control" id="bandName" name="bandName" value="{{ valuesInput.bandName }}" placeholder="nom du groupe">
             </label>
         </div>
         <div class="col-xs-6">
@@ -65,8 +74,8 @@
             </label>
         </div>
         <div class="col-xs-6">
-            <label for="genre" class="form-label">Genre musical :
-                <select id="genre" class="form-select" name="genre">
+            <label for="style" class="form-label">Genre musical :
+                <select id="style" class="form-select" name="style">
                     <option selected value="">-- Veuillez choisir --</option>
                     <option value="1">Rock</option>
                     <option value="2">Pop</option>
