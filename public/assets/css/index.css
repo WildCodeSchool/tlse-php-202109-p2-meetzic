@@ -1,6 +1,6 @@
 .index__h1 {
-    margin: 1.2rem;
-    font-size: 1.2rem;
+    margin: 1.6rem;
+    font-size: 1.3rem;
     text-align: center;
     font-family: titleFont;
 }
@@ -52,7 +52,6 @@
     .index__ul {
         flex-direction: row;
     }
-    /* Probleme de dimensions de la page à cause de la navbar. Bootstrap ? voir avec Sylvain */
 }
 
 @media screen and (min-width: 1200px) {
@@ -85,10 +84,10 @@
     }
 
     .index__ul:hover li:not(:hover) img {
-        -webkit-filter: grayscale(1) blur(5px);
-            -moz-filter: grayscale(1) blur(5px);
-                -ms-filter: grayscale(1) blur(5px);
-                -o-filter: grayscale(1) blur(5px);
-                    filter: grayscale(1) blur(5px);
+        -webkit-filter: grayscale(1);
+            -moz-filter: grayscale(1);
+                -ms-filter: grayscale(1);
+                -o-filter: grayscale(1);
+                    filter: grayscale(1);
     }
 }

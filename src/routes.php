@@ -11,11 +11,13 @@ use App\Controller\SessionController;
 
 return [
     '' => ['IndexController', 'index',],
-    'home' => ['AdController', 'browseByChoice',],
+    'home' => ['AdController', 'browse',],
+    'home/search' => ['AdController', 'browseBySearch', ['query']],
     'profile' => ['ProfileController', 'show', ['id']],
     'private' => ['ProfileController', 'profileView'],
     'login' => ['SessionController', 'login'],
     'new' => ['SessionController', 'creation'],
+    'about' => ['AboutController', 'about'],
     'private/add' => ['ProfileController', 'addProfile'],
     'private/show' => ['ProfileController', 'showProfileValidate', ['id']],
 ];

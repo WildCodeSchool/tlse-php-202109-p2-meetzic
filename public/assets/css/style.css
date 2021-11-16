@@ -8,9 +8,13 @@
     src: url("../fonts/Raleway-Medium.ttf");
 }
 
+html {
+    height: 100%;
+}
+
 div {
     font-family: textFont;
-    font-size: 1.2rem;
+    border-radius: 10px;
 }
 
 h5, h1 {
@@ -29,12 +33,19 @@ h6 {
 }
 
 /* style layout */
-body {
+.layout__background {
     background-image: url("../images/banner-bg.jpg");
     background-size: 100vw 100vh;
     position: relative;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    height: 100%;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 
 @media screen and (min-width: 1024px) {
@@ -56,7 +67,7 @@ body {
         left: 0rem;
     }
 
-    body {
+    .layout__background {
         background-image: url("../images/banner-bg.jpg");
         background-size: cover;
         position: relative;
@@ -70,10 +81,6 @@ nav button {
 
 button {
     height: 2.5rem;
-}
-.footer {
-    background-color: #303030;
-    font-size: 0.5rem;
 }
 
 .body__adCard {
@@ -97,8 +104,42 @@ button {
 
 .description__adCard {
     margin-right: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .seachBtn {
     margin-top: 2rem;
+}
+
+#about {
+    color: white;
+    background-color: black;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.about__exitImg {
+    width: 2.5rem; 
+    height: auto;
+    margin-top: 1rem;
+}
+
+.about__anonymousImg {
+    width: 100%;
+}
+
+.about__title{
+    text-shadow: 2px 2px 2px orangered;
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+}
+
+.about__text{
+    text-align: center;
+}
+.about__sign{
+    text-shadow: 2px 2px 2px orangered;
+    text-align: right;
+    margin-right: 1rem;
 }

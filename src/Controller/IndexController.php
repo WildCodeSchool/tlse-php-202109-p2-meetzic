@@ -11,7 +11,6 @@ class IndexController extends AbstractController
      */
     public function index()
     {
-
         if (!empty($_GET)) {
             if ($_GET['firstChoice'] === 'band') {
                 setcookie('firstChoice', 'band');
