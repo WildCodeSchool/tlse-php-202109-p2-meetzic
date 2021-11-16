@@ -68,7 +68,7 @@ class ProfileManager extends AbstractManager
     public function selectAllInputValidateProfile(int $id): array
     {
         $statement = $this->pdo->prepare(
-            'SELECT m.avatar, m.nickname, m.experience, m.status, m.description, m.password, m.email, 
+            'SELECT m.id, m.avatar, m.nickname, m.experience, m.status, m.description, m.password, m.email, 
             i.name instrument, g.name style, b.name band
             FROM musician m 
             LEFT JOIN musician_has_genre mg ON m.id = mg.musician_id
