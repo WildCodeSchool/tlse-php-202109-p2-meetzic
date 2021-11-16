@@ -76,7 +76,8 @@ class AdModel extends AbstractManager
 
     public function setAd(array $adInputs)
     {
-        $statement = $this->pdo->prepare('INSERT INTO ad (title, description, musician_id) VALUES (:title, :description, (SELECT musician.id FROM musician WHERE musician.id = :musician_id));');
+        $statement = $this->pdo->prepare('INSERT INTO ad (title, description, musician_id) 
+        VALUES (:title, :description, (SELECT musician.id FROM musician WHERE musician.id = :musician_id));');
         $statement->bindValue(':title', $adInputs['title'], \PDO::PARAM_STR);
         $statement->bindValue(':description', $adInputs['description'], \PDO::PARAM_STR);
         $statement->bindValue(':musician_id', $id, \PDO::PARAM_STR);

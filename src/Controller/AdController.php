@@ -47,17 +47,17 @@ class AdController extends AbstractController
         return $this->twig->render('Home/ad.html.twig', ['ads' => $ads]);
     }
 
-    public function addAd(int $id) {
-        // var_dump($_POST); 
+    public function addAd(int $id)
+    {
+        // var_dump($_POST);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $adInputs = array_map('trim', $_POST);
-            
-        
-        $adModel = new AdModel;
-        $ad = $adModel->setAd($adInputs);
-               
-        return $this->twig->render('AdSubmit/adsubmit.html.twig');
-        
+
+
+            $adModel = new AdModel();
+            $ad = $adModel->setAd($adInputs);
+
+            return $this->twig->render('AdSubmit/adsubmit.html.twig');
         }
     }
 }
