@@ -11,14 +11,14 @@ class SessionController extends AbstractController
     /**
      * Display the login page and connect the user
      *
-     * @return string 
+     * @return string
      */
     public function login()
     {
         // Call database
         $sessionManager = new SessionManager();
         $logs = $sessionManager->getLogin();
-        // Check POST datas       
+        // Check POST datas
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (!empty($_POST['nickname']) && !empty($_POST['password'])) {
                 $nickname = $this->cleanPostData($_POST['nickname']);
@@ -45,11 +45,6 @@ class SessionController extends AbstractController
         return $this->twig->render('Session/login.html.twig', ['errors' => $this->errors]);
     }
 
-    /**
-     * Display the creation page
-     *
-     * @return void
-     */
     public function creation()
     {
         $this->previousPage();
@@ -57,7 +52,9 @@ class SessionController extends AbstractController
         $sessionManager = new SessionManager();
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            if (!empty($_POST['newNickname']) || !empty($_POST['newPassword']) || !empty($_POST['confirmNewPassword'])) {
+            if (
+                !empty($_POST['newNickname']) || !empty($_POST['newPassword']) || !empty($_POST['confirmNewPassword'])
+            ) {
                 $newNickname = $this->cleanPostData($_POST['newNickname']);
                 $newPassword = $this->cleanPostData($_POST['newPassword']);
                 $confirmNewPassword = $this->cleanPostData($_POST['confirmNewPassword']);
@@ -74,9 +71,9 @@ class SessionController extends AbstractController
                 } else {
                     $newUser = $sessionManager->newUser($newNickname, $newPassword);
                     $_SESSION['nickname'] = $newNickname;
-                    header('Location: private');   
-                }                   
-            } else {  
+                    header('Location: private');
+                }
+            } else {
                 $this->errors[] = "Merci de renseigner tous les champs";
             }
         }

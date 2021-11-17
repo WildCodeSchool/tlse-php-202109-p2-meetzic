@@ -2,8 +2,9 @@
 
 namespace App\Model;
 
-class SessionManager extends AbstractManager 
-{    
+class SessionManager extends AbstractManager
+{
+
     /**
      * Get datas users
      *
@@ -15,7 +16,7 @@ class SessionManager extends AbstractManager
         $logs = $statement->fetchAll(\PDO::FETCH_ASSOC);
         return $logs;
     }
-    
+
     /**
      * Add a new user
      *
@@ -23,7 +24,7 @@ class SessionManager extends AbstractManager
      * @param  string $newPassword
      * @return void
      */
-    public function newUser(string $newNickname, string $newPassword): void
+    public function newUser(string $newNickname, string $newPassword)
     {
         $statement = $this->pdo->prepare('INSERT INTO musician (nickname, password) VALUES (:newNickname, :newPassword)');
         $statement->bindValue(':newNickname', $newNickname, \PDO::PARAM_STR);
@@ -31,7 +32,7 @@ class SessionManager extends AbstractManager
 
         $row = $statement->execute();
     }
-        
+
     /**
      * Verify if user Exists
      *

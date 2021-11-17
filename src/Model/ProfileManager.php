@@ -84,8 +84,12 @@ class ProfileManager extends AbstractManager
         return $input;
     }
 
-    public function deleteProfile(int $id): void
+    public function deleteProfile($id)
     {
+        $statement = $this->pdo->prepare('DELETE FROM musician_has_genre WHERE musician_id = :idmusician;');
+        $statement->bindValue(':idmusician', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
         $statement = $this->pdo->prepare('DELETE FROM musician WHERE id = :id;');
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();

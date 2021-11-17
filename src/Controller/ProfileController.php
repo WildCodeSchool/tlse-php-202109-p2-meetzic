@@ -45,4 +45,15 @@ class ProfileController extends AbstractController
 
         return $this->twig->render('PrivateProfile/privateValidate.html.twig', ['input' => $input]);
     }
+
+    public function deleteById(?string $id)
+    {
+        $profileManager = new ProfileManager();
+        $id = array_map('trim', $_GET);
+        var_dump($id);
+        $profileManager->deleteProfile($id);
+        //header('Location:/home');
+
+        return $this->twig->render('PrivateProfile/delete.html.twig');
+    }
 }
