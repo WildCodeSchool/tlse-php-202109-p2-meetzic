@@ -49,7 +49,6 @@ class AdController extends AbstractController
 
     public function addAd($id)
     {
-        var_dump($_SESSION);
         return $this->twig->render('AdSubmit/adsubmit.html.twig', ['id' => $_SESSION['id']]);
     }
 
