@@ -2,6 +2,16 @@
 
 {% block content %}
     {% include "PrivateProfile/_inputValidate.html.twig" %} 
-    {% include "PrivateProfile/_cardAdValidate.html.twig" %} 
-    {% include "PrivateProfile/_button.html.twig" %} 
+    <section class="row row-col-1 row-col-lg-2 mt-4">
+        {% for adPrivate in ad %}
+            {% include "PrivateProfile/_cardAdValidate.html.twig" %} 
+        {% endfor %}   
+    </section>
+    {% include "PrivateProfile/_button.html.twig" %}
+    <div class="col-12">
+    <form action="/adsubmit" method="GET">
+        <button type="submit" class="btn btn-primary">Ajouter une annonce</button>
+        <input type="hidden" name="id" value="{{ id }}"/>
+    </form>
+    </div>
 {% endblock %}

@@ -7,41 +7,32 @@
     <form  action="/home/search" method="get">
         <div class="row search__bar">
             <img class="search__img" src="/assets/images/logosearch.png" alt="band">
-            <div class="search"> <input type="text" class="search-input" placeholder="Que recherchez-vous ?" name=""> <a href="#" class="search-icon"> <i class="fa fa-search"></i> </a> </div></div>
+                <div class="search"> 
+                    <input type="text" class="search-input" placeholder="Que recherchez-vous ?" name=""> 
+                    <a href="#" class="search-icon"> <i class="fa fa-search"></i> </a> 
+                </div>
         </div>
         <div class="container filters">
             <div class="row">
                 <div class="col-4">
-                    <select class="form-select" aria-label="Instruments">
-                        <option value="guitare">Guitare</option>
-                        <option value="batterie">Batterie</option>
-                        <option value="basse">Basse</option>
-                        <option value="chant">Chant</option>
-                        <option value="piano">Piano</option>
-                        <option value="clavier">Clavier</option>
-                        <option value="cuivres">Cuivres</option>
-                        <option value="percussion">Percussion</option>
-                        <option value="accordéon">Accordéon</option>
+                    <select class="form-select" aria-label="Instrument">
+                        <option value="">Instrument</option>
+                        {% for instrument in instruments %}
+                            <option value="{{ instrument['name']}}" class="dropdown-item" type="button">{{ instrument['name']}}</a>
+                        {% endfor %}   
                     </select>
                 </div>
                 <div class="col-4">
                     <select class="form-select" aria-label="Genre">
-                        <option value="rock">Rock</option>
-                        <option value="pop">Pop</option>
-                        <option value="metal">Metal</option>
-                        <option value="funk">Funk</option>
-                        <option value="soul">Soul</option>
-                        <option value="hard-Rock">Hard-Rock</option>
-                        <option value="punk-Rock">Punk-Rock</option>
-                        <option value="disco">Disco</option>
-                        <option value="reggae">Reggae</option>
-                        <option value="musette">Musette</option>
-                        <option value="jazz">Jazz</option>
-                        <option value="classique">Classique</option>
+                        <option value="">Genre</option>
+                        {% for genre in genres %}
+                            <option value="{{ genre['name']}}" class="dropdown-item" type="button">{{ genre['name']}}</a>
+                        {% endfor %} 
                     </select>
                 </div>
                 <div class="col-4">
-                    <select class="form-select" aria-label="Instruments">
+                    <select class="form-select" aria-label="Instrument">
+                        <option value="">Experience</option>
                         <option value="guitare">Débutant</option>
                         <option value="batterie">Avancé</option>
                         <option value="basse">Expert</option>
