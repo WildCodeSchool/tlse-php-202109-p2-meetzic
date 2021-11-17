@@ -26,14 +26,30 @@ class ProfileManager extends AbstractManager
 
     public function editProfile(array $valuesInput): int
     {
+        $bandId = null;
+        if (!empty($valuesInput['band']) && $valuesInput['band'] === "1") {
+            $statement = $this->pdo->prepare(
+                'INSERT INTO band
+                (name, description, status)
+                VALUES 
+                (:name, :description, :status);'
+            );
+            $statement->bindValue(':name', $valuesInput['bandName'], \PDO::PARAM_STR);
+            $statement->bindValue(':description', $valuesInput['description'], \PDO::PARAM_STR);
+            $statement->bindValue(':status', $valuesInput['status'], \PDO::PARAM_INT);
+            $statement->execute();
+            $bandId = (int)$this->pdo->lastInsertId();
+        }
+
         $statement = $this->pdo->prepare(
             'INSERT INTO musician
-            (nickname, password, email, avatar, experience, description, status, instrument_id)
+            (nickname, password, email, avatar, experience, description, status, instrument_id, band_id)
             VALUES 
             (:nickname, :password, :email, :avatar, :experience, :description, :status, 
             (SELECT :instrument 
             FROM instrument 
-            WHERE instrument.id = :instrument));'
+            WHERE instrument.id = :instrument), 
+            :bandId);'
         );
         $statement->bindValue(':nickname', $valuesInput['nickname'], \PDO::PARAM_STR);
         $statement->bindValue(':password', $valuesInput['password'], \PDO::PARAM_STR);
@@ -43,24 +59,7 @@ class ProfileManager extends AbstractManager
         $statement->bindValue(':description', $valuesInput['description'], \PDO::PARAM_STR);
         $statement->bindValue(':status', $valuesInput['status'], \PDO::PARAM_INT);
         $statement->bindValue(':instrument', $valuesInput['instrument'], \PDO::PARAM_INT);
-
-        $statement->execute();
-        return (int)$this->pdo->lastInsertId();
-    }
-
-    public function insertBand(array $band): int
-    {
-        $statement = $this->pdo->prepare(
-            'INSERT INTO band
-            (name, description, status)
-            VALUES (
-            ":nameBand", 
-            ":descriptionBand", 
-            ":statusBand");'
-        );
-        $statement->bindValue(':nameBand', $band['nameBand'], \PDO::PARAM_STR);
-        $statement->bindValue(':descriptionBand', $band['descriptionBand'], \PDO::PARAM_STR);
-        $statement->bindValue(':statusBand', $band['statusBand'], \PDO::PARAM_INT);
+        $statement->bindValue(':bandId', $bandId, \PDO::PARAM_INT);
 
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
@@ -83,5 +82,12 @@ class ProfileManager extends AbstractManager
         $input = $statement->fetch(\PDO::FETCH_ASSOC);
 
         return $input;
+    }
+
+    public function deleteProfile(int $id): void
+    {
+        $statement = $this->pdo->prepare('DELETE FROM musician WHERE id = :id;');
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
     }
 }
