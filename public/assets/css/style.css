@@ -8,138 +8,142 @@
     src: url("../fonts/Raleway-Medium.ttf");
 }
 
-html {
-    height: 100%;
+:root {
+    --main-bg-orange:#FF6D00;
+    --second-bg-orange: #FFB900;
+    --main-figma-orange: #ff7B00;
+    --second-figma-orange: #FF8B42;
+    --main-black: #141414;
+    --main-grey: #303030;
 }
 
-div {
+body, html {
+    min-height:calc(100vh - 24px);
     font-family: textFont;
-    border-radius: 10px;
 }
 
-h5, h1 {
-    font-family: titleFont;
-    font-size: 1.1rem;
-}
-
-h6 {
-    font-family: titleFont;
-    font-size: 0.9rem;
-}
-
-.card__profile {
-    font-family: titleFont;
-    font-size: 0.6rem;
-}
-
-/* style layout */
-.layout__background {
+.main__background {
     background-image: url("../images/banner-bg.jpg");
-    background-size: 100vw 100vh;
     position: relative;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    height: 100%;
+    background-position: left 100%;
+    background-position-x: center; 
 }
-
-footer {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-}
-
-@media screen and (min-width: 1024px) {
-    .navbar__nav {
-        max-width: 1200px;
-        margin-left: 10rem;
-    }
     
-    nav img {
-        top:-2.5rem;
-        left:-2rem;
-    }
+.navbar {
+    margin: 1.5rem 2rem 2rem 2rem;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px black;
+    font-family: titleFont;
 }
 
-@media screen and (max-width: 990px) {
-    nav img {
-        height : 5rem;
-        top: 0rem;
-        left: 0rem;
-    }
-
-    .layout__background {
-        background-image: url("../images/banner-bg.jpg");
-        background-size: cover;
-        position: relative;
-        background-position-x: center;  
-    }
+.nav-img {
+    position: absolute;
+    height: 5rem;
+    top: -1rem;
+    left: -1.5rem;
+    filter: drop-shadow(0.8px 0.8px 0.1px black);
 }
 
-nav button {
-    border : none;
-}
-
-button {
-    height: 2.5rem;
-}
-
-.body__adCard {
-    height: 9rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-#image__adCard {
-    margin-left: 0.8rem;
-    margin-top: 0.1rem;
-    height: 7rem;
-    width: 8rem;
-    border-radius: 0.3rem;
-}
-
-.title__adCard {
-    margin-left: 0.8rem;
-    margin-top: 0.5rem;
-}
-
-.description__adCard {
-    margin-right: 0.8rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.seachBtn {
-    margin-top: 2rem;
-}
-
-#about {
-    color: white;
-    background-color: black;
-    font-size: 1rem;
+.navbar-toggler {
+    border: none;
     padding: 0;
 }
 
-.about__exitImg {
-    width: 2.5rem; 
-    height: auto;
+.navbar-light .navbar-toggler {
+    color: var(--main-bg-orange);
+}
+
+.navbar-nav {
+    font-size: 0.9rem;
+    text-align: end;
     margin-top: 1rem;
+    font-weight: normal;
 }
 
-.about__anonymousImg {
-    width: 100%;
-}
-
-.about__title{
-    text-shadow: 2px 2px 2px orangered;
-    text-align: center;
-    margin: 3rem 0 2rem 0;
-}
-
-.about__text{
-    text-align: center;
-}
-.about__sign{
-    text-shadow: 2px 2px 2px orangered;
-    text-align: right;
+.navbar-collapse {
+    flex-grow: 0;
     margin-right: 1rem;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 3rem;
+    background-color: var(--main-grey);  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__elements, .footer__elements a { 
+    white-space: nowrap;
+    font-weight: bolder ;
+    color: white;
+    text-decoration: none; 
+    margin: 0 0.5rem 0 0.5rem; 
+}
+
+.footer__elements a:hover {
+    color: var(--main-bg-orange);
+}
+
+@media screen and (min-width: 990px) {
+    body, html {
+        min-height:calc(100vh - 48px)
+    }
+    .main__background {
+        background-size: cover;
+    }
+
+    .navbar {
+        margin: 3rem 5rem 3rem 5rem;
+    }
+    
+    .nav-img {
+        height: 8rem;
+        top: -1.5rem;
+        left: -4rem;
+    }
+
+    .navbar-nav {
+        margin: 0;
+        height: 4rem;
+        font-size: 1rem;
+        align-items: center
+    }
+   
+    .nav-link {
+       margin-left:  2rem;
+    }
+
+    .footer__elements {
+    margin: 0 2rem 0 2rem; 
+    } 
+}
+
+@media screen and (min-width: 1400px) {
+
+    .navbar {
+        margin: 3rem 5rem 3rem 8rem;
+    }
+    
+    .nav-img {
+        height: 10rem;
+        top: -2.5rem;
+        left: -4rem;
+    }
+
+    .navbar-nav {
+        margin: 0;
+        height: 4rem;
+        font-size: 1.2rem;
+        align-items: center
+    }
+
+    .nav-link {
+        margin-left:  4rem;
+     }
 }
