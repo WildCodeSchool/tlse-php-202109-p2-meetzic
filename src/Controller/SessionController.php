@@ -23,8 +23,8 @@ class SessionController extends AbstractController
             if (!empty($_POST['nickname']) && !empty($_POST['password'])) {
                 $nickname = $this->cleanPostData($_POST['nickname']);
                 $password = $this->cleanPostData($_POST['password']);
-
-                for ($i = 0; $i < count($logs); $i++) {
+                $lenghtOfTable = count($logs);
+                for ($i = 0; $i < $lenghtOfTable; $i++) {
                     $hash = password_hash($logs[$i]['password'], PASSWORD_DEFAULT);
                     $verified = password_verify($password, $hash);
 
@@ -45,7 +45,12 @@ class SessionController extends AbstractController
         return $this->twig->render('Session/login.html.twig', ['errors' => $this->errors]);
     }
 
-    public function creation()
+    /**
+     * Display the creation page
+     *
+     * @return string
+     */
+    public function creation(): string
     {
         $this->previousPage();
 
@@ -53,7 +58,8 @@ class SessionController extends AbstractController
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (
-                !empty($_POST['newNickname']) || !empty($_POST['newPassword']) || !empty($_POST['confirmNewPassword'])
+                !empty($_POST['newNickname']) || !empty($_POST['newPassword'])
+                || !empty($_POST['confirmNewPassword'])
             ) {
                 $newNickname = $this->cleanPostData($_POST['newNickname']);
                 $newPassword = $this->cleanPostData($_POST['newPassword']);
@@ -69,7 +75,7 @@ class SessionController extends AbstractController
                 } elseif ($userExists) {
                     $this->errors[] = "Cet identifiant existe déjà !";
                 } else {
-                    $newUser = $sessionManager->newUser($newNickname, $newPassword);
+                    $sessionManager->newUser($newNickname, $newPassword);
                     $_SESSION['nickname'] = $newNickname;
                     header('Location: private');
                 }
