@@ -74,8 +74,10 @@ abstract class AbstractController
      */
     public function varTwig(): void
     {
+
         if (!empty($_SESSION)) {
-            $redirection = "private";
+            $id = $_SESSION['id'];
+            $redirection = "private/show?id=" . $id;
             $connected = true;
         } else {
             $redirection = "login";

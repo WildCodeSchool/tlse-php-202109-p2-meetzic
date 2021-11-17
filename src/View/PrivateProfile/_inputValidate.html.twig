@@ -8,9 +8,6 @@
             {% endif %}   
         </label>
     </div>
-    <pre>
-        {{ dump(input) }}
-    </pre>
     <div class="col-xs-7">
         <h3>Bonjour {{ input.nickname }}</h3>
         <p>Bienvenue sur votre profil !</p>    
@@ -52,7 +49,7 @@
     <div class="col-xs-6">
         <label for="status" class="form-label">Disponible :
             <input type="text" class="form-control" id="status" name="status" 
-            value=" {% if input.status == 0 %}
+                        value=" {% if input.status == 0 %}
                         Non disponible
                     {% else %}
                         Disponible

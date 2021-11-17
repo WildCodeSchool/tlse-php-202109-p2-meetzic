@@ -60,12 +60,11 @@ class ProfileManager extends AbstractManager
         $statement->bindValue(':status', $valuesInput['status'], \PDO::PARAM_INT);
         $statement->bindValue(':instrument', $valuesInput['instrument'], \PDO::PARAM_INT);
         $statement->bindValue(':bandId', $bandId, \PDO::PARAM_INT);
-
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
 
-    public function selectAllInputValidateProfile(int $id): array
+    public function selectAllInputValidateProfile(string $id): array
     {
         $statement = $this->pdo->prepare(
             'SELECT m.avatar, m.nickname, m.experience, m.status, m.description, m.password, m.email, 
@@ -80,7 +79,13 @@ class ProfileManager extends AbstractManager
         $statement->bindValue(':id', $id, \PDO::PARAM_STR);
         $statement->execute();
         $input = $statement->fetch(\PDO::FETCH_ASSOC);
-
         return $input;
+    }
+
+    public function deleteProfile(int $id): void
+    {
+        $statement = $this->pdo->prepare('DELETE FROM musician WHERE id = :id;');
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
     }
 }

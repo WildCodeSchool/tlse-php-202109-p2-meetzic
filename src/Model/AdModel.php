@@ -80,9 +80,16 @@ class AdModel extends AbstractManager
         VALUES (:title, :description, (SELECT musician.id FROM musician WHERE musician.id = :musician_id));');
         $statement->bindValue(':title', $adInputs['title'], \PDO::PARAM_STR);
         $statement->bindValue(':description', $adInputs['description'], \PDO::PARAM_STR);
-        $statement->bindValue(':musician_id', $id, \PDO::PARAM_STR);
-
+        $statement->bindValue(':musician_id', $_SESSION['id'], \PDO::PARAM_STR);
         $statement->execute();
-        return (int)$this->pdo->lastInsertId();
+    }
+
+    public function getAdById(string $id): ?array
+    {
+        $statement = $this->pdo->prepare('SELECT * FROM ad WHERE musician_id = :id');
+        $statement->bindValue(':id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+        $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        return $result === false ? null : $result;
     }
 }

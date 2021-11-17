@@ -2,15 +2,14 @@
 
 {% block content %}
     <main class="container">
-        {# {{dump(post)}} #}
-        <form action="/private/show" method="post">
+        <form action="/advalidate" method="POST">
             <div class="mb-3">
                 <label for="title" class="form-label">Titre de votre annonce:</label>
                 <input type="text" name="title" class="form-control" id="title" aria-describedby="title">
             </div>
             <div class="mb-3">
-                <label for="ad_text" class="form-label">Votre annonce:</label>
-                <input type="password" name="description" class="form-control" id="ad_text">
+                <label for="description" class="form-label">Votre annonce:</label>
+                <input type="text" name="description" class="form-control" id="description">
             </div>
             <button type="submit" class="btn btn-primary">envoyer</button>
         </form>

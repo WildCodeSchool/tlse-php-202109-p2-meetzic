@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\AdModel;
 use App\Model\ProfileManager;
 
 class ProfileController extends AbstractController
@@ -17,10 +18,8 @@ class ProfileController extends AbstractController
     }
 
     public function profileView()
-    
     {
         $this->previousPage();
-
         return $this->twig->render('PrivateProfile/privateProfile.html.twig');
     }
 
@@ -37,13 +36,17 @@ class ProfileController extends AbstractController
         return $this->twig->render('PrivateProfile/privateProfile.html.twig');
     }
 
-    public function showProfileValidate(int $id): string
+    public function showProfileValidate(string $id): string
     {
         $this->previousPage();
 
         $profileManager = new ProfileManager();
         $input = $profileManager->selectAllInputValidateProfile($id);
+        $adPrivate = new AdModel();
+        $ad = $adPrivate->getAdById($id);
 
-        return $this->twig->render('PrivateProfile/privateValidate.html.twig', ['input' => $input]);
+
+
+        return $this->twig->render('PrivateProfile/privateValidate.html.twig', ['input' => $input, 'ad' => $ad]);
     }
 }

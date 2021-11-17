@@ -20,5 +20,7 @@ return [
     'about' => ['AboutController', 'about'],
     'private/add' => ['ProfileController', 'addProfile'],
     'private/show' => ['ProfileController', 'showProfileValidate', ['id']],
-    'adsubmit' => ['AdController', 'addAd', ['id']],
+    'adsubmit' => ['AdController', 'addAd',['id']],
+    'advalidate' => ['AdController', 'insertAd', ['id']],
+    'private/delete' => ['ProfilController', 'deleteById', ['id']],
 ];
