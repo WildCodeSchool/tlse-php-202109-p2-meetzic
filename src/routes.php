@@ -18,7 +18,7 @@ return [
     'login' => ['SessionController', 'login'],
     'new' => ['SessionController', 'creation'],
     'about' => ['AboutController', 'about'],
-    'private/add' => ['ProfileController', 'addProfile'],
-    'private/show' => ['ProfileController', 'showProfileValidate', ['id']],
-    'private/delete' => ['ProfileController', 'deleteById', ['id']],
+    'privateAdd' => ['ProfileController', 'addProfile'],
+    'privateShow' => ['ProfileController', 'showProfileValidate', ['id']],
+    'privateDelete' => ['ProfileController', 'deleteById', ['id']],
 ];
