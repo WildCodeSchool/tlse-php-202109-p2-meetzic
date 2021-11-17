@@ -52,10 +52,15 @@
     </form>
 </div>   
 
-{% for ad in ads %}
-    {% include "_adCard.html.twig" %} 
-{% endfor %}   
-
-<br><br>
+ <main class="container">
+        <section class="row col-lg-12">
+            {% for ad in ads %} 
+                <div class="col-12 col-lg-6 p-0">
+                    {% include "_adCard.html.twig" %}
+                </div>
+            {% endfor %}              
+        </section>
+    </main> 
+<br><br><br>
 
 {% endblock %}
