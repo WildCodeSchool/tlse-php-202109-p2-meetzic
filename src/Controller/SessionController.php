@@ -2,11 +2,12 @@
 
 namespace App\Controller;
 
-use App\Model\ProfileManager;
-use Exception;
+use App\Model\SessionManager;
 
 class SessionController extends AbstractController
 {
+    private array $errors = [];
+
     /**
      * Display the login page and connect the user
      *
@@ -14,32 +15,34 @@ class SessionController extends AbstractController
      */
     public function login()
     {
-        //TODO : Faire appel base de donnée: nickname + password
-        define('LOGIN', 'Yolodu31');
-        define('PASSWORD', 'tacos');
-        $hash = password_hash(PASSWORD, PASSWORD_DEFAULT);
-
+        // Call database
+        $sessionManager = new SessionManager();
+        $logs = $sessionManager->getLogin();
         // Check POST datas
-        $errors = [];
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (!empty($_POST['nickname']) && !empty($_POST['password'])) {
                 $nickname = $this->cleanPostData($_POST['nickname']);
                 $password = $this->cleanPostData($_POST['password']);
-                $verified = password_verify($password, $hash);
+                $lenghtOfTable = count($logs);
+                for ($i = 0; $i < $lenghtOfTable; $i++) {
+                    $hash = password_hash($logs[$i]['password'], PASSWORD_DEFAULT);
+                    $verified = password_verify($password, $hash);
 
-                if ($nickname !== LOGIN) {
-                    $errors[] = "L'identifiant est incorrect";
-                } elseif (!$verified) {
-                    $errors[] = "Le mot de passe est incorrect";
-                } else {
-                    $_SESSION['nickname'] = $nickname;
-                    header('Location:' . $_COOKIE['previous']);
+                    if ($nickname !== $logs[$i]['nickname']) {
+                        $this->errors[] = "L'identifiant est incorrect";
+                    } elseif (!$verified) {
+                        $this->errors[] = "Le mot de passe est incorrect";
+                        break;
+                    } else {
+                        $_SESSION['nickname'] = $nickname;
+                        header('Location:' . $_COOKIE['previous']);
+                    }
                 }
             } else {
-                $errors[] = "Merci de renseigner tous les champs";
+                $this->errors[] = "Merci de renseigner tous les champs";
             }
         }
-        return $this->twig->render('Session/login.html.twig', ['errors' => $errors]);
+        return $this->twig->render('Session/login.html.twig', ['errors' => $this->errors]);
     }
 
     /**
@@ -47,10 +50,39 @@ class SessionController extends AbstractController
      *
      * @return string
      */
-    public function creation()
+    public function creation(): string
     {
         $this->previousPage();
 
-        return $this->twig->render('Session/creation.html.twig');
+        $sessionManager = new SessionManager();
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            if (
+                !empty($_POST['newNickname']) || !empty($_POST['newPassword'])
+                || !empty($_POST['confirmNewPassword'])
+            ) {
+                $newNickname = $this->cleanPostData($_POST['newNickname']);
+                $newPassword = $this->cleanPostData($_POST['newPassword']);
+                $confirmNewPassword = $this->cleanPostData($_POST['confirmNewPassword']);
+                $userExists = $sessionManager->userExists($newNickname);
+
+                if (empty($_POST['newNickname'])) {
+                    $this->errors[] = "Merci de saisir un pseudo";
+                } elseif (empty($_POST['newPassword'])) {
+                    $this->errors[] = "Merci de saisir votre mot de passe";
+                } elseif ($newPassword !== $confirmNewPassword) {
+                    $this->errors[] = "Les mots de passes ne sont pas identiques";
+                } elseif ($userExists) {
+                    $this->errors[] = "Cet identifiant existe déjà !";
+                } else {
+                    $sessionManager->newUser($newNickname, $newPassword);
+                    $_SESSION['nickname'] = $newNickname;
+                    header('Location: private');
+                }
+            } else {
+                $this->errors[] = "Merci de renseigner tous les champs";
+            }
+        }
+        return $this->twig->render('Session/creation.html.twig', ['errors' => $this->errors]);
     }
 }
