@@ -4,17 +4,17 @@ namespace App\Model;
 
 class FilterModel extends AbstractManager
 {
-    public function getAllInstrument(): ?array
+    public function getAllInstruments(): ?array
     {
         $statement = $this->pdo->query('SELECT instrument.name, instrument.id FROM instrument');
-        $result1 = $statement->fetchAll(\PDO::FETCH_ASSOC);
-        return $result1 === false ? null : $result1;
+        $instruments = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        return $instruments === false ? null : $instruments;
     }
 
-    public function getAllGenre(): ?array
+    public function getAllGenres(): ?array
     {
         $statement = $this->pdo->query('SELECT genre.id, genre.name FROM genre');
-        $result1 = $statement->fetchAll(\PDO::FETCH_ASSOC);
-        return $result1 === false ? null : $result1;
+        $genres = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        return $genres === false ? null : $genres;
     }
 }

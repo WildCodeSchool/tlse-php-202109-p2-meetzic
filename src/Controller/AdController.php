@@ -13,11 +13,11 @@ class AdController extends AbstractController
 
         $adModel = new AdModel();
 
-        $instru = new FilterModel();
-        $filterInstruments = $instru->getAllInstrument();
+        $instrumentModel = new FilterModel();
+        $filterInstruments = $instrumentModel->getAllInstruments();
 
-        $genre = new FilterModel();
-        $filterGenres = $genre->getAllGenre();
+        $genreModel = new FilterModel();
+        $filterGenres = $genreModel->getAllGenres();
 
         if (!empty($_COOKIE)) {
             if ($_COOKIE['firstChoice'] === 'band') {

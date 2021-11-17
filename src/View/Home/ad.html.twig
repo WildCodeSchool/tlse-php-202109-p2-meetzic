@@ -15,8 +15,8 @@
         <div class="container filters">
             <div class="row">
                 <div class="col-4">
-                    <select class="form-select" aria-label="Instruments">
-                        <option value="">Instruments</option>
+                    <select class="form-select" aria-label="Instrument">
+                        <option value="">Instrument</option>
                         {% for instrument in instruments %}
                             <option value="{{ instrument['name']}}" class="dropdown-item" type="button">{{ instrument['name']}}</a>
                         {% endfor %}   
@@ -31,8 +31,8 @@
                     </select>
                 </div>
                 <div class="col-4">
-                    <select class="form-select" aria-label="Instruments">
-                        <option value="">Experiences</option>
+                    <select class="form-select" aria-label="Instrument">
+                        <option value="">Experience</option>
                         <option value="guitare">Débutant</option>
                         <option value="batterie">Avancé</option>
                         <option value="basse">Expert</option>
