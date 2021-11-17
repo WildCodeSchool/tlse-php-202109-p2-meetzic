@@ -22,15 +22,9 @@
                             Instrument
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <button class="dropdown-item" type="button">Guitare</button>
-                                <button class="dropdown-item" type="button">Batterie</button>
-                                <button class="dropdown-item" type="button">Basse</button>
-                                <button class="dropdown-item" type="button">Chant</button>
-                                <button class="dropdown-item" type="button">Piano</button>
-                                <button class="dropdown-item" type="button">Batterie</button>
-                                <button class="dropdown-item" type="button">Cuivres</button>
-                                <button class="dropdown-item" type="button">Percussion</button>
-                                <button class="dropdown-item" type="button">Accordéon</button>
+                            {% for instrument in instruments %}
+                                <a href="#" class="dropdown-item" type="button">{{ instrument['name']}}</a>
+                            {% endfor %}
                             </div>
                         </div>
                 </div>
@@ -40,19 +34,9 @@
                             Genre
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <button class="dropdown-item" type="button">Rock</button>
-                                <button class="dropdown-item" type="button">Pop</button>
-                                <button class="dropdown-item" type="button">Metal</button>
-                                <button class="dropdown-item" type="button">Funk</button>
-                                <button class="dropdown-item" type="button">Soul</button>
-                                <button class="dropdown-item" type="button">Hard-Rock</button>
-                                <button class="dropdown-item" type="button">Punk-Rock</button>
-                                <button class="dropdown-item" type="button">Electro</button>
-                                <button class="dropdown-item" type="button">Disco</button>
-                                <button class="dropdown-item" type="button">Reggae</button>
-                                <button class="dropdown-item" type="button">Musette</button>
-                                <button class="dropdown-item" type="button">Jazz</button>
-                                <button class="dropdown-item" type="button">Classique</button>
+                            {% for genre in genres %}
+                                <a href="#" class="dropdown-item" type="button">{{ genre['name']}}</a>
+                            {% endfor %}   
                             </div>
                         </div>
                 </div>
@@ -62,9 +46,9 @@
                             Expérience
                             </button>
                             <div class="dropdown-menu dropdown-menu-right">
-                                <button class="dropdown-item" type="button">Débutant</button>
-                                <button class="dropdown-item" type="button">Avancé</button>
-                                <button class="dropdown-item" type="button">Expert</button>
+                                <a href="#" class="dropdown-item" type="button">Débutant</a>
+                                <a href="#" class="dropdown-item" type="button">Avancé</a>
+                                <a href="#" class="dropdown-item" type="button">Expert</a> 
                             </div>
                         </div>
                 </div>    
