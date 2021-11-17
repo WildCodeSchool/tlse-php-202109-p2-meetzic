@@ -1,0 +1,17 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <main class="container">
+        <form action="/advalidate" method="POST">
+            <div class="mb-3">
+                <label for="title" class="form-label">Titre de votre annonce:</label>
+                <input type="text" name="title" class="form-control" id="title" aria-describedby="title">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Votre annonce:</label>
+                <input type="text" name="description" class="form-control" id="description">
+            </div>
+            <button type="submit" class="btn btn-primary">envoyer</button>
+        </form>
+    </main>    
+{% endblock %}

@@ -73,10 +73,11 @@ class ProfileManager extends AbstractManager
         $statement->bindValue(':status', $valuesInput['status'], \PDO::PARAM_INT);
         $statement->bindValue(':instrument', $valuesInput['instrument'], \PDO::PARAM_INT);
         $statement->bindValue(':bandId', $bandId, \PDO::PARAM_INT);
-
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
+
+    public function selectAllInputValidateProfile(string $id): array
 
     /**
      * selectAllInputValidateProfile select all elements for profile private
@@ -84,7 +85,7 @@ class ProfileManager extends AbstractManager
      * @param  int $id
      * @return array
      */
-    public function selectAllInputValidateProfile(int $id): array
+
     {
         $statement = $this->pdo->prepare(
             'SELECT m.id, m.avatar, m.nickname, m.experience, m.status, m.description, m.password, m.email, 
@@ -99,7 +100,6 @@ class ProfileManager extends AbstractManager
         $statement->bindValue(':id', $id, \PDO::PARAM_STR);
         $statement->execute();
         $input = $statement->fetch(\PDO::FETCH_ASSOC);
-
         return $input;
     }
 
