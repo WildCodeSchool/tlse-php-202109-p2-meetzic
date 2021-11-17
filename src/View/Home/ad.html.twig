@@ -7,12 +7,16 @@
     <form  action="/home/search" method="get">
         <div class="row search__bar">
             <img class="search__img" src="/assets/images/logosearch.png" alt="band">
-            <div class="search"> <input type="text" class="search-input" placeholder="Que recherchez-vous ?" name=""> <a href="#" class="search-icon"> <i class="fa fa-search"></i> </a> </div></div>
+                <div class="search"> 
+                    <input type="text" class="search-input" placeholder="Que recherchez-vous ?" name=""> 
+                    <a href="#" class="search-icon"> <i class="fa fa-search"></i> </a> 
+                </div>
         </div>
         <div class="container filters">
             <div class="row">
                 <div class="col-4">
                     <select class="form-select" aria-label="Instruments">
+                        <option value="">Instruments</option>
                         {% for instrument in instruments %}
                             <option value="{{ instrument['name']}}" class="dropdown-item" type="button">{{ instrument['name']}}</a>
                         {% endfor %}   
@@ -20,6 +24,7 @@
                 </div>
                 <div class="col-4">
                     <select class="form-select" aria-label="Genre">
+                        <option value="">Genre</option>
                         {% for genre in genres %}
                             <option value="{{ genre['name']}}" class="dropdown-item" type="button">{{ genre['name']}}</a>
                         {% endfor %} 
@@ -27,6 +32,7 @@
                 </div>
                 <div class="col-4">
                     <select class="form-select" aria-label="Instruments">
+                        <option value="">Experiences</option>
                         <option value="guitare">Débutant</option>
                         <option value="batterie">Avancé</option>
                         <option value="basse">Expert</option>
