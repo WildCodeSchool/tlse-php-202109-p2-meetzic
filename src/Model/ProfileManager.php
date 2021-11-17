@@ -4,6 +4,13 @@ namespace App\Model;
 
 class ProfileManager extends AbstractManager
 {
+
+    /**
+     * selectAllColumnById return all column for profile public
+     *
+     * @param  int $id
+     * @return array
+     */
     public function selectAllColumnById(int $id): array
     {
         $statement = $this->pdo->prepare(
@@ -24,6 +31,12 @@ class ProfileManager extends AbstractManager
         return $tupple;
     }
 
+    /**
+     * editProfile insert all elements of profile private
+     *
+     * @param  array $valuesInput
+     * @return int
+     */
     public function editProfile(array $valuesInput): int
     {
         $bandId = null;
@@ -65,10 +78,16 @@ class ProfileManager extends AbstractManager
         return (int)$this->pdo->lastInsertId();
     }
 
+    /**
+     * selectAllInputValidateProfile select all elements for profile private
+     *
+     * @param  int $id
+     * @return array
+     */
     public function selectAllInputValidateProfile(int $id): array
     {
         $statement = $this->pdo->prepare(
-            'SELECT m.avatar, m.nickname, m.experience, m.status, m.description, m.password, m.email, 
+            'SELECT m.id, m.avatar, m.nickname, m.experience, m.status, m.description, m.password, m.email, 
             i.name instrument, g.name style, b.name band
             FROM musician m 
             LEFT JOIN musician_has_genre mg ON m.id = mg.musician_id
@@ -84,8 +103,22 @@ class ProfileManager extends AbstractManager
         return $input;
     }
 
-    public function deleteProfile(int $id): void
+    /**
+     * deleteProfile
+     *
+     * @param  int $id
+     * @return void
+     */
+    public function deleteProfile($id): void
     {
+        $statement = $this->pdo->prepare('DELETE FROM musician_has_genre WHERE musician_id = :idmusician;');
+        $statement->bindValue(':idmusician', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        $statement = $this->pdo->prepare('DELETE FROM ad WHERE musician_id = :idmusician;');
+        $statement->bindValue(':idmusician', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
         $statement = $this->pdo->prepare('DELETE FROM musician WHERE id = :id;');
         $statement->bindValue(':id', $id, \PDO::PARAM_INT);
         $statement->execute();

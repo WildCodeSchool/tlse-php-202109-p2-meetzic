@@ -35,6 +35,7 @@ class SessionController extends AbstractController
                         break;
                     } else {
                         $_SESSION['nickname'] = $nickname;
+                        $_SESSION['id'] = $logs[$i]['id'];
                         header('Location:' . $_COOKIE['previous']);
                     }
                 }
