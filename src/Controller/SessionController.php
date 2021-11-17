@@ -23,8 +23,8 @@ class SessionController extends AbstractController
             if (!empty($_POST['nickname']) && !empty($_POST['password'])) {
                 $nickname = $this->cleanPostData($_POST['nickname']);
                 $password = $this->cleanPostData($_POST['password']);
-
-                for ($i = 0; $i < count($logs); $i++) {
+                $lenghtOfTable = count($logs);
+                for ($i = 0; $i < $lenghtOfTable; $i++) {
                     $hash = password_hash($logs[$i]['password'], PASSWORD_DEFAULT);
                     $verified = password_verify($password, $hash);
 

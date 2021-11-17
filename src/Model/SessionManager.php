@@ -12,7 +12,8 @@ class SessionManager extends AbstractManager
      */
     public function getLogin(): array
     {
-        $statement = $this->pdo->query('SELECT musician.id, musician.nickname, musician.password, musician.avatar FROM musician;');
+        $statement = $this->pdo->query('SELECT musician.id, musician.nickname, musician.password, musician.avatar 
+                                        FROM musician;');
         $logs = $statement->fetchAll(\PDO::FETCH_ASSOC);
         return $logs;
     }
@@ -22,15 +23,15 @@ class SessionManager extends AbstractManager
      *
      * @param  string $newNickname
      * @param  string $newPassword
-     * @return void
+     *
      */
     public function newUser(string $newNickname, string $newPassword)
     {
-        $statement = $this->pdo->prepare('INSERT INTO musician (nickname, password) VALUES (:newNickname, :newPassword)');
+        $statement = $this->pdo->prepare('INSERT INTO musician (nickname, password)
+                                          VALUES (:newNickname, :newPassword)');
         $statement->bindValue(':newNickname', $newNickname, \PDO::PARAM_STR);
         $statement->bindValue(':newPassword', $newPassword, \PDO::PARAM_STR);
-
-        $row = $statement->execute();
+        $statement->execute();
     }
 
     /**

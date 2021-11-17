@@ -7,7 +7,7 @@ class AboutController extends AbstractController
     /**
      * Display about page
      *
-     * @return void
+     * @return string
      */
     public function about()
     {

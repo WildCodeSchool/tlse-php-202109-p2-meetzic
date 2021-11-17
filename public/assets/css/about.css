@@ -1,0 +1,32 @@
+#about {
+    color: white;
+    background-color: black;
+    font-size: 1rem;
+    padding: 0;
+}
+
+.about__exitImg {
+    width: 2.5rem; 
+    height: auto;
+    margin-top: 1rem;
+}
+
+.about__anonymousImg {
+    width: 100%;
+}
+
+.about__title {
+    text-shadow: 2px 2px 2px #FF6D00;
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+}
+
+.about__text {
+    text-align: center;
+}
+
+.about__sign {
+    text-shadow: 2px 2px 2px #FF6D00;
+    text-align: right;
+    margin-right: 1rem;
+}
