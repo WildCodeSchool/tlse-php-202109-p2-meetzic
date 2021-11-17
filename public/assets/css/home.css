@@ -78,6 +78,9 @@ a:link {
     font-size: 0.7rem;
     border-radius: 10px;
     border: 2px solid var(--main-black);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .adCard {
