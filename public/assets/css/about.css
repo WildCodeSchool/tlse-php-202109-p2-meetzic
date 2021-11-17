@@ -15,17 +15,17 @@
     width: 100%;
 }
 
-.about__title{
+.about__title {
     text-shadow: 2px 2px 2px #FF6D00;
     text-align: center;
     margin: 3rem 0 2rem 0;
 }
 
-.about__text{
+.about__text {
     text-align: center;
 }
 
-.about__sign{
+.about__sign {
     text-shadow: 2px 2px 2px #FF6D00;
     text-align: right;
     margin-right: 1rem;
