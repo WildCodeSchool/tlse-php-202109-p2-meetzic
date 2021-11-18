@@ -39,7 +39,7 @@ CREATE TABLE `musician_has_genre` (
 
 LOCK TABLES `musician_has_genre` WRITE;
 /*!40000 ALTER TABLE `musician_has_genre` DISABLE KEYS */;
-INSERT INTO `musician_has_genre` VALUES (1,1),(4,1),(5,1),(6,1),(2,2),(3,2),(7,11);
+INSERT INTO `musician_has_genre` VALUES (1,1),(4,1),(5,1),(6,1),(11,1),(2,2),(3,2),(12,2),(8,5),(10,9),(9,10),(7,11);
 /*!40000 ALTER TABLE `musician_has_genre` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-05 16:43:41
+-- Dump completed on 2021-11-18 17:08:02
