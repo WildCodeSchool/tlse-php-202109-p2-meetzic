@@ -124,16 +124,39 @@
             </div>
         </div>
         <div class="col-12 d-flex my-3 order-lg-4 order-4 col-lg-3 justify-content-lg-end justify-content-center mt-lg-5 pt-lg-5">
-        <label for="description" class="form-label text-center">Description :
-            <textarea type="textarea" class="form-control my-lg-1" id="description" name="description"> 
-                {{ valuesInput.description }}    
-            </textarea>
-        </label>
+            <label for="description" class="form-label text-center">Description :
+                <textarea type="textarea" class="form-control my-lg-1" id="description" name="description"> 
+                    {{ valuesInput.description }}    
+                </textarea>
+            </label>
         </div>
-        <div class="col-12 col-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-lg-5 pb-lg-5 order-5 order-lg-5">
-            <a href="privateAdd">
-            <button type="submit" class="btn btn-primary">Valider</button>
-            </a>
-        </div>
-    </form>
+        <div class="container">
+            <div class="col-12 col-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-lg-5 pb-lg-5 order-5 order-lg-5">
+                <a href="privateAdd">
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </a>
+            </div>
+        </form>
+        <article>
+            <div class="container d-flex">
+                <div class="col-6 d-flex justify-content-center">
+                    <form action="privateDelete" method="GET">
+                        <div class="col-12 col-lg-12 d-flex justify-content-center justify-content-lg-end mb-4 mb-lg-5 pb-lg-5">
+                            <a href="privateDelete?id={{ sessionId }}">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Supprimer le profil</button>
+                            </a>
+                        </div>
+                    </form>
+                </div> 
+                <div class="col-6 d-flex justify-content-center">
+                    <form action="adsubmit" method="GET">
+                        <div>
+                            <button type="submit" class="btn btn-primary">Ajouter une annonce</button>
+                            <input type="hidden" name="id" value="{{ id }}"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </article>
+    </div>
 </div>
