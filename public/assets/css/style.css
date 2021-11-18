@@ -92,6 +92,18 @@ footer {
     color: var(--main-bg-orange);
 }
 
+.btn-primary {
+    color: var(--main-black);
+    background-color: white;
+    border-color: var(--main-black);
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    color: var(--main-black);
+    background-color: var(--main-bg-orange);
+    border-color: var(--main-black);
+}
+
 @media screen and (min-width: 990px) {
     body, html {
         min-height:calc(100vh - 48px)
