@@ -1,5 +1,9 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/private.css">
+{% endblock %}
+
 {% block content %}
     {% include "PrivateProfile/_inputValidate.html.twig" %} 
     <section class="row row-col-1 row-col-lg-2 mt-4">
@@ -7,19 +11,19 @@
             {% include "PrivateProfile/_cardAdValidate.html.twig" %} 
         {% endfor %}   
     </section>
-    <div class="col-12">
-        <form action="/adsubmit" method="GET">
-            <button type="submit" class="btn btn-primary">Ajouter une annonce</button>
-            <input type="hidden" name="id" value="{{ id }}"/>
-        </form>
-    </div>
-    <div class="col-6 d-flex justify-content-center">
-        <form action="/privateDelete" method="GET">
-            <div class="col-12 col-lg-12 d-flex justify-content-center justify-content-lg-end mb-4 mb-lg-5 pb-lg-5">
+    <div class="container d-flex flex-wrap">
+        <div class="col-12 col-lg-5 d-flex justify-content-center">
+            <form action="/adsubmit" method="GET">
+                <button type="submit" class="btn btn-primary login__button">Ajouter une annonce</button>
+                <input type="hidden" name="id" value="{{ id }}"/>
+            </form>
+        </div>
+        <div class="col-12 col-lg-5 d-flex justify-content-center mb-5">
+            <form action="/privateDelete" method="GET">
                 <a href="/privateDelete?id={{ sessionId }}">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Supprimer le profil</button>
+                <button type="button" class="btn btn-primary login__button" data-bs-toggle="modal" data-bs-target="#exampleModal">Supprimer le profil</button>
                 </a>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 {% endblock %}
