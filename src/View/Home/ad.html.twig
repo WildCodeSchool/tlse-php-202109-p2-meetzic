@@ -4,12 +4,12 @@
 
 {% block content %}
 <div class="container">
-    <form  action="/home/search" method="get">
+    <form action="/home/search" method="get">
         <div class="row search__bar">
             <img class="search__img" src="/assets/images/logosearch.png" alt="band">
-                <div class="search"> 
-                    <input type="text" class="search-input" placeholder="Que recherchez-vous ?" name=""> 
-                    <a href="/home/search" class="search-icon"> <i class="fa fa-search"></i> </a> 
+                <div class="search">
+                    <input type="text" class="search-input" placeholder="Que recherchez-vous ?" name="query"> 
+                    <a href="/home/search" class="search-icon"> <i class="fa fa-search" type="submit"></i> </a> 
                 </div>
         </div>
         <div class="container filters">
