@@ -76,14 +76,16 @@ abstract class AbstractController
     {
 
         if (!empty($_SESSION)) {
-            $id = $_SESSION['id'];
-            $redirection = "privateShow?id=" . $id;
+            $sessionId = $_SESSION['id'];
+            $redirection = "privateShow?id=" . $_SESSION['id'];
             $connected = true;
         } else {
+            $sessionId = "";
             $redirection = "login";
             $connected = false;
         }
 
+        $this->twig->addGlobal('sessionId', $sessionId);
         $this->twig->addGlobal('redirection', $redirection);
         $this->twig->addGlobal('connected', $connected);
     }

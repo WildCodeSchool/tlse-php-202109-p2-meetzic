@@ -1,4 +1,4 @@
-.login {
+.creation {
     background-color: rgb(255, 255, 255, 0.9);
     margin: 4rem 2rem 2rem 2rem;
     border: 2px solid rgba(255, 255, 255);
@@ -6,12 +6,12 @@
     box-shadow: 2px 2px 5px black;
 }
 
-.login__header {
+.creation__header {
     text-align: center;
     padding: 1rem 1rem 0 1rem;
 }
 
-.login__form {
+.creation__form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,25 +19,28 @@
     width: 100%
 }
 
-.login__error {
+.creation__form input {
+    margin-bottom: 1rem;
+}
+
+.creation__error {
     color: red;
     text-align: center;
 }
 
-.login__nickname {
+.creation__nickname {
     width: 15rem;
     border-radius: 10px;
     box-shadow: 1px 1px 2px var(--main-bg-orange);
 }
 
-.login__password {
-    margin: 1rem 0 0 0;
+.creation__password {
     width: 15rem;
     border-radius: 10px;
     box-shadow: 1px 1px 2px var(--main-bg-orange);
 }
 
-.login__nickname:hover, .login__password:hover {
+.creation_nickname:hover, .creation__password:hover {
     color: var(--main-bg-orange);
 }
 
@@ -46,7 +49,7 @@
     box-shadow: 0 0 0 0.2rem rgba(255, 109, 0, 0.25);
 } 
 
-.login__button {
+.creation__button {
     display: flex;
     flex-direction: column;
     align-items: center;  
@@ -57,24 +60,17 @@
     box-shadow: 1px 1px 3px black;
 }
 
-.login__new {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.login__new p {
-    text-align: center;
-    margin: 0;
-}
-
-.login__new a {
-    color: var(--main-bg-orange);
+a {
+    text-decoration: none;
+    color: white;
 }
 
 @media screen and (min-width: 1200px) {
+    .navbar {
+        margin: 5rem 5rem 1rem 8rem;
+    }
 
-    .login {
+    .creation {
         background-color: transparent;
         border: none;
         box-shadow: none;
@@ -83,24 +79,24 @@
         align-items: center;
         justify-content: center;
         gap: 5rem;
-        margin: 1rem 5rem 0 0;
+        margin: 0rem 5rem 0 0;
     }
     
-    .login__header {
+    .creation__header {
         text-align: right;
         margin-bottom: 5rem;
     }
 
-    .login__header h2 {
+    .creation__header h2 {
         font-size: 3rem;
     } 
 
-    .login__header h6 {
+    .creation__header h6 {
         font-size: 1.5rem;  
         margin-top: 2rem;
     }
     
-    .login__form {
+    .creation__form {
         background-color: rgb(255, 255, 255, 0.9);
         margin: 6rem;
         border: 2px solid rgba(255, 255, 255);
@@ -114,28 +110,24 @@
         font-size: 1.5rem;
     }
     
-    .login__error {
+    .creation__error {
         font-size: 1.5rem;
         padding: 0;
         margin-top: 2rem;
     }
     
-    .login__nickname {
+    .creation__nickname__group {
         width: 25rem;
         margin-top: 1rem;
     }
     
-    .login__password {
+    .creation__password {
         margin: 1rem 0 0 0;
         width: 25rem;
     }
  
-    .login__button { 
+    .creation__button { 
         margin: 1.5rem;
-        font-size: 1.5rem;
-    }
-    
-    .login__new {
         font-size: 1.5rem;
     }
 }
