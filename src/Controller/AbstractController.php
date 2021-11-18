@@ -74,19 +74,21 @@ abstract class AbstractController
      */
     public function varTwig(): void
     {
-
         if (!empty($_SESSION)) {
             $sessionId = $_SESSION['id'];
-            $redirection = "privateShow?id=" . $_SESSION['id'];
+            $deposit = "adsubmit?id=" . $sessionId;
+            $redirection = "privateShow?id=" . $sessionId;
             $connected = true;
         } else {
             $sessionId = "";
             $redirection = "login";
+            $deposit = "login";
             $connected = false;
         }
 
         $this->twig->addGlobal('sessionId', $sessionId);
         $this->twig->addGlobal('redirection', $redirection);
+        $this->twig->addGlobal('deposit', $deposit);
         $this->twig->addGlobal('connected', $connected);
     }
 }
