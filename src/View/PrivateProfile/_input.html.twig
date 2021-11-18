@@ -1,5 +1,5 @@
 <div class="container d-lg-flex flex-wrap">
-    <form class="row g-3" action="/private/add" method="post">
+    <form class="row g-3" action="privateAdd" method="post">
         <div class="col-11 order-2 order-lg-2 col-lg-3 mt-lg-5 pt-lg-5">
             <label for="avatar" class="text-center">Chargez un lien pour définir votre avatar :    
                 <input type="file" class="form-control col-12 col-lg-12 my-4 mt-lg-5 ml-2" id="avatar" name="avatar" value="{{ valuesInput.avatar }}">
@@ -131,7 +131,7 @@
         </label>
         </div>
         <div class="col-12 col-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-lg-5 pb-lg-5 order-5 order-lg-5">
-            <a href="/privateAdd">
+            <a href="privateAdd">
             <button type="submit" class="btn btn-primary">Valider</button>
             </a>
         </div>
