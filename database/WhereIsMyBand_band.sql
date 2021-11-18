@@ -28,7 +28,7 @@ CREATE TABLE `band` (
   `description` text NOT NULL,
   `status` tinyint NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +37,7 @@ CREATE TABLE `band` (
 
 LOCK TABLES `band` WRITE;
 /*!40000 ALTER TABLE `band` DISABLE KEYS */;
-INSERT INTO `band` VALUES (1,'Les Portes','Rock californien période 60\'s et 70\'s',0),(2,'Breaking Stones','Pop rock britannique depuis 1962',1),(3,'King','Groupe fan de Queen',1);
+INSERT INTO `band` VALUES (1,'Les Portes','Rock californien période 60\'s et 70\'s',0),(2,'Breaking Stones','Pop rock britannique depuis 1962',1),(3,'King','Groupe fan de Queen',1),(4,'Les musclés','Groupe de cinq musiciens français formé en 1987 lors de la création du Club Dorothée',1),(5,'2be3','Groupe de trois chanteur français',1),(6,'Guns N\' Roses','Guns N\' Roses est un groupe américain de hard rock, originaire de Los Angeles, en Californie.',1);
 /*!40000 ALTER TABLE `band` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-05 16:43:41
+-- Dump completed on 2021-11-18 17:08:02
