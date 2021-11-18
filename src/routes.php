@@ -21,4 +21,6 @@ return [
     'privateAdd' => ['ProfileController', 'addProfile'],
     'privateShow' => ['ProfileController', 'showProfileValidate', ['id']],
     'privateDelete' => ['ProfileController', 'deleteById', ['id']],
+    'adsubmit' => ['AdController', 'addAd',['id']],
+    'advalidate' => ['AdController', 'insertAd', ['id']],
 ];

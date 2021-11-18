@@ -70,7 +70,7 @@ a:link {
 .filters {
     width: 22rem;
     margin-top: 0.5rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .form-select {
@@ -78,14 +78,16 @@ a:link {
     font-size: 0.7rem;
     border-radius: 10px;
     border: 2px solid var(--main-black);
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .adCard {
     border: 3px solid var(--main-black) ;
     border-radius: 10px;
-    border-style: inset;
-    padding: 0;
-    margin: 1rem;
+    padding-left: 8px;
+    margin: 1rem 1rem 0 1rem ;
     max-height: 12rem;
     background-color: rgba(255, 255, 255, 0.9);
 }
@@ -94,7 +96,7 @@ a:link {
   width: 6rem;
   height: 6rem;
   position: relative;
-  bottom: 10px;
+  bottom: 7px;
   border: 1px solid var(--main-black);
   border-radius: 10px;
 }
@@ -124,5 +126,76 @@ a:link {
     -webkit-box-orient: vertical;
     overflow: hidden;
     font-size: 1rem; 
+    padding-right: 1.5rem;
 }
 
+@media screen and (min-width: 1200px) {
+
+    .search__img {
+        height: 10rem;
+    }
+
+    .search {
+        width: 60rem;
+    }
+    
+    .search-input {
+        line-height: 3rem;
+        transition: width 0.4s linear;
+        margin-left: 2rem;
+        vertical-align: center;
+    }
+    
+    .search .search-input {
+        width:50rem;
+        font-size: 1.3rem;
+    }
+
+    .search-icon {
+        height: 3rem;
+        width: 3rem;
+    }
+
+    .filters {
+        width: 50rem;
+        margin-top: 1.5rem;
+        margin-bottom: 3rem;
+    }
+    
+    .form-select {
+        width: 15rem;
+        font-size: 1rem;
+    }
+
+    .adCard {
+        width: 95%;
+        max-height: 20rem;
+        margin: 1rem;
+    }
+
+    #card-image {
+        width: 10rem;
+        height: 10rem;
+        bottom: 1rem;
+        margin-left: 10px;
+    }
+      
+    .title__adCard {
+        height: 2rem;
+        margin: 0.5rem;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+        line-height: 3rem;
+        max-width: 40rem;
+        -webkit-line-clamp: 1;
+        padding: 5px;    
+    }
+    
+    .card-text {
+        max-width: 25rem;
+        -webkit-line-clamp: 4;
+        font-size: 1.3rem; 
+        padding-right: 1rem;
+    }
