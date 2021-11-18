@@ -14,6 +14,7 @@
     border-radius: 10px;
     width: 22rem;
     border: 5px double var(--main-black);
+    box-shadow: 3px 3px 5px rgb(0, 0, 0, 1);
 }
 
 .search-input {
@@ -38,16 +39,17 @@
 .search:hover>.search-icon {
     background: var(--second-bg-orange);
     color: white;
-    animation: 3s linear 10ms infinite normal ;
+    box-shadow: 2px 2px 3px rgb(0, 0, 0, 1);
+    animation: 400ms linear 5ms infinite normal ;
     animation-name: rotation;
 }
 
 @keyframes rotation {
     from {
-        transform: rotate(0deg)
+        transform: rotate(5deg)
     }
     to {
-        transform: rotate(360deg)
+        transform: rotate(-5deg)
     }
 }
 
@@ -55,12 +57,14 @@
     height: 2rem;
     width: 2rem;
     float: right;
+    margin-right: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     background-color: var(--main-bg-orange);
     border-radius: 10px;
+    box-shadow: 1px 1px 1px rgb(0, 0, 0, 1);
 }
 
 a:link {
@@ -81,15 +85,22 @@ a:link {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    box-shadow: 2px 2px 6px rgb(0, 0, 0, 1);
 }
 
+.form-select:focus, input[type='name'] {
+    border-color: var(--main-bg-orange);
+    box-shadow: 0 0 0 0.2rem rgba(255, 109, 0, 0.25);
+} 
+
 .adCard {
-    border: 3px solid var(--main-black) ;
+    border: 2px solid var(--main-black) ;
     border-radius: 10px;
     padding-left: 8px;
     margin: 1rem 1rem 0 1rem ;
     max-height: 12rem;
     background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 2px 2px 5px  rgb(0, 0, 0, 1)
 }
 
 #card-image {
@@ -199,3 +210,4 @@ a:link {
         font-size: 1.3rem; 
         padding-right: 1rem;
     }
+}

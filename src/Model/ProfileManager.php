@@ -77,15 +77,13 @@ class ProfileManager extends AbstractManager
         return (int)$this->pdo->lastInsertId();
     }
 
-    public function selectAllInputValidateProfile(string $id): array
-
     /**
      * selectAllInputValidateProfile select all elements for profile private
      *
-     * @param  int $id
+     * @param  string $id
      * @return array
      */
-
+    public function selectAllInputValidateProfile(string $id): array
     {
         $statement = $this->pdo->prepare(
             'SELECT m.id, m.avatar, m.nickname, m.experience, m.status, m.description, m.password, m.email, 

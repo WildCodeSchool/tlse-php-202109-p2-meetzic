@@ -76,8 +76,8 @@ abstract class AbstractController
     {
         if (!empty($_SESSION)) {
             $id = $_SESSION['id'];
-            $redirection = "private/show?id=" . $id;
             $deposit = "adsubmit?id=" . $id;
+            $redirection = "privateShow?id=" . $id;
             $connected = true;
         } else {
             $redirection = "login";
