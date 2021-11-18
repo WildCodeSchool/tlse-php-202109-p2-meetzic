@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Model\AdModel;
 use App\Model\ProfileManager;
+use App\Model\SessionManager;
 
 class ProfileController extends AbstractController
 {
@@ -42,15 +43,30 @@ class ProfileController extends AbstractController
      */
     public function addProfile(): string
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $this->previousPage();
+        $errors = [];
+        $sessionManager = new SessionManager();
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $valuesInput = array_map('trim', $_POST);
 
-            $profileManager = new ProfileManager();
-            $id = $profileManager->editProfile($valuesInput);
-            header('Location:/privateShow?id=' . $id);
-        }
+            if (!empty($valuesInput['nickname']) || !empty($valuesInput['password'])) {
+                $userExists = $sessionManager->userExists($valuesInput['nickname']);
 
-        return $this->twig->render('PrivateProfile/privateProfile.html.twig');
+                if ($userExists) {
+                    $errors[] = "Cet identifiant existe déjà !";
+                } else {
+                    $profileManager = new ProfileManager();
+                    $id = $profileManager->editProfile($valuesInput);
+                    $_SESSION['nickname'] = $valuesInput['nickname'];
+                    $_SESSION['id'] = $id;
+                    header('Location:/privateShow?id=' . $id);
+                }
+            } else {
+                $errors[] = "Merci de renseigner tous les champs";
+            }
+        }
+        return $this->twig->render('PrivateProfile/privateProfile.html.twig', ['errors' => $errors]);
     }
 
     public function showProfileValidate(string $id): string
@@ -60,26 +76,22 @@ class ProfileController extends AbstractController
         $profileManager = new ProfileManager();
         $input = $profileManager->selectAllInputValidateProfile($id);
         $adPrivate = new AdModel();
-        $ad = $adPrivate->getAdById($id);
+        $newad = $adPrivate->getAdById($id);
 
-
-
-        return $this->twig->render('PrivateProfile/privateValidate.html.twig', ['input' => $input, 'ad' => $ad]);
+        return $this->twig->render('PrivateProfile/privateValidate.html.twig', ['input' => $input, 'ad' => $newad]);
     }
 
     /**
      * deleteById
      *
-     * @param  int $id
-     * @return string
+     * @param  string $id
+     * @return void
      */
-    public function deleteById(int $id): string
+    public function deleteById(string $id): void
     {
         $profileManager = new ProfileManager();
-        $id = $_SESSION['id'];
+        $id = $_GET['id'];
         $profileManager->deleteProfile($id);
         header('Location:/home');
-
-        return $this->twig->render('PrivateProfile/delete.html.twig');
     }
 }

@@ -99,7 +99,7 @@ footer {
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-    color: var(--main-black);
+    color: white;
     background-color: var(--main-bg-orange);
     border-color: var(--main-black);
 }
