@@ -6,6 +6,9 @@
 .card-body img {
     width: 12rem;
     height: 12rem;
+    border: 2px solid var(--main-black);
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px rgb(0, 0, 0, 1);
 }
 
 #profile__card {
@@ -25,6 +28,12 @@
     margin: 2rem 0.5rem 2rem 0.5rem;
 }
 
+.card {
+    border-radius: 10px;
+    border: 2px solid var(--main-black);  
+    box-shadow: 4px 4px 6px rgb(0, 0, 0, 1);
+}
+
 .card-ad-title {
     font-family: titleFont;
     text-align: center;
@@ -34,13 +43,16 @@
 .card-ad-body {
     display: inline-block;
     text-align: left;
-    padding: 1rem
+    padding: 1rem;
 }
 
 .btn {
+    background-color: white;
     font-size: 1.2rem;
-    border: 2px solid var(--main-black);
+    background-color: var(--second-figma-orange); 
+    border: 2px solid var(--main-bg-orange);
     border-radius: 10px;
+    box-shadow: 2px 2px 3px black;
 }
 
 @media screen and (min-width: 1200px) {
@@ -86,9 +98,9 @@
     }
 
     .btn {
-        font-size: 1.8rem;
-        border: 3px solid var(--main-black);
+        font-size: 1.5rem;
         border-radius: 10px;
+        padding: 10px;
     }
 
     .card-ad-body {
