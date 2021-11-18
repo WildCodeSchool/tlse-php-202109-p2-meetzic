@@ -75,7 +75,7 @@ class AdController extends AbstractController
             $adInputs = array_map('trim', $_POST);
             $adModel = new AdModel();
             $ad = $adModel->setAd($adInputs);
-            header('Location:/private/show?id=' . $_SESSION['id']);
+            header('Location:/privateShow?id=' . $_SESSION['id']);
         }
         return "";
     }
