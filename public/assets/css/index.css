@@ -1,5 +1,5 @@
 .index__h1 {
-    margin: 2rem 0 2rem 0;
+    margin: 3rem 0 2rem 0;
     font-size: 1.3rem;
     text-align: center;
     font-family: titleFont;
@@ -56,7 +56,7 @@
 
 @media screen and (min-width: 1200px) {
     .index__h1 {
-        margin: 2.5rem;
+        margin: 5rem 0 2.5rem 0;
         font-size: 3rem;
     }
 
