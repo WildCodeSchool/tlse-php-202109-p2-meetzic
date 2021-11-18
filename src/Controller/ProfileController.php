@@ -62,8 +62,6 @@ class ProfileController extends AbstractController
         $adPrivate = new AdModel();
         $ad = $adPrivate->getAdById($id);
 
-
-
         return $this->twig->render('PrivateProfile/privateValidate.html.twig', ['input' => $input, 'ad' => $ad]);
     }
 

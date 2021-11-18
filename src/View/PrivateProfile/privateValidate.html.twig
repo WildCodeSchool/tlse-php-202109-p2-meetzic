@@ -7,11 +7,19 @@
             {% include "PrivateProfile/_cardAdValidate.html.twig" %} 
         {% endfor %}   
     </section>
-    {% include "PrivateProfile/_button.html.twig" %}
     <div class="col-12">
-    <form action="/adsubmit" method="GET">
-        <button type="submit" class="btn btn-primary">Ajouter une annonce</button>
-        <input type="hidden" name="id" value="{{ id }}"/>
-    </form>
+        <form action="/adsubmit" method="GET">
+            <button type="submit" class="btn btn-primary">Ajouter une annonce</button>
+            <input type="hidden" name="id" value="{{ id }}"/>
+        </form>
+    </div>
+    <div class="col-6 d-flex justify-content-center">
+        <form action="/privateDelete" method="GET">
+            <div class="col-12 col-lg-12 d-flex justify-content-center justify-content-lg-end mb-4 mb-lg-5 pb-lg-5">
+                <a href="/privateDelete?id={{ sessionId }}">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Supprimer le profil</button>
+                </a>
+            </div>
+        </form>
     </div>
 {% endblock %}
