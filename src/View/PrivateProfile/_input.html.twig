@@ -1,116 +1,136 @@
 <div class="container d-lg-flex flex-wrap">
     <form class="row g-3" action="/private/add" method="post">
-        <div class="col-xs-5">
-            <label for="avatar">   
-                <input type="file" class="form-control col-12 col-lg-6 order-lg-2 my-4 mt-lg-5" id="avatar" name="avatar" value="{{ valuesInput.avatar }}">
+        <div class="col-11 order-2 order-lg-2 col-lg-3 mt-lg-5 pt-lg-5">
+            <label for="avatar" class="text-center">Chargez un lien pour définir votre avatar :    
+                <input type="file" class="form-control col-12 col-lg-12 my-4 mt-lg-5 ml-2" id="avatar" name="avatar" value="{{ valuesInput.avatar }}">
             </label>
         </div>
-        <div class="col-12 col-lg-12 order-lg-1">
-            <div class="container-fluid d-flex flex-wrap my-2 mt-lg-4">
+        <div class="col-12 col-lg-12 order-1 order-lg-1">
+            <div class="container-fluid d-flex flex-wrap my-2 my-lg-5">
                 <div class="col-12 d-flex justify-content-center">   
-                    <h3>Bonjour {{ valuesInput.nickname }}</h3>
+                    <h3 class="fw-boler">Bonjour {{ valuesInput.nickname }}</h3>
                 </div>
                 <div class="col-12 d-flex justify-content-center">
-                    <p>Veuillez ajouter certaines informations sur votre profil</p>
+                    <p class="fw-bolder text-center">Veuillez ajouter certaines informations sur votre profil</p>
                 </div>
             </div>
         </div>
-        <div class="container-fluid order-lg-3 col-lg-6 mt-lg-5 pt-lg-5">
+        <div class="container-fluid order-lg-3 order-3 col-lg-6 mt-lg-2 pt-lg-2">
             <div class="row col-12 d-flex flex-row ms-1">       
                 <div class="col-6">
-                    <label for="nickname" class="form-label">Pseudo :
-                        <input type="text" class="form-control" id="nickname" name="nickname" value="{{ valuesInput.nickname }}" placeholder="pseudo" required>
+                    <label for="nickname" class="form-label text-center">Pseudo :
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control my-lg-1" id="nickname" name="nickname" value="{{ valuesInput.nickname }}" placeholder="pseudo" required>
+                        </div>
                     </label>
                 </div>
                 <div class="col-6">
-                    <label for="password" class="form-label">Mot de passe :
-                        <input type="password" class="form-control" id="password" name="password" value="{{ valuesInput.password }}" placeholder="*********" required>
+                    <label for="password" class="form-label text-center">Mot de passe :
+                        <div class="col-lg-10">
+                            <input type="password" class="form-control my-lg-1" id="password" name="password" value="{{ valuesInput.password }}" placeholder="*********" required>
+                        </div>
                     </label>
                 </div>
                 <div class="col-6">
-                    <label for="email" class="form-label">E-mail :
-                        <input type="email" class="form-control" id="email" name="email" value="{{ valuesInput.email }}" placeholder="mail@mail.fr" required>
+                    <label for="email" class="form-label text-center">E-mail :
+                        <div class="col-lg-10">
+                            <input type="email" class="form-control my-lg-1" id="email" name="email" value="{{ valuesInput.email }}" placeholder="mail@mail.fr" required>
+                        </div>
+                   </label>
+                </div>
+                <div class="col-6">
+                    <label for="instrument" class="form-label text-center">Instrument :
+                        <div class="col-lg-12">
+                            <select id="instrument" class="form-select my-lg-1" name="instrument">
+                                <option selected value="null">-- Veuillez choisir --</option>
+                                <option value="1">Guitare</option>
+                                <option value="2">Batterie</option>
+                                <option value="3">Basse</option>
+                                <option value="4">Chant</option>
+                                <option value="5">Piano</option>
+                                <option value="6">Clavier</option>
+                                <option value="7">Cuivres</option>
+                                <option value="8">Percussion</option>
+                                <option value="9">Accordéon</option>
+                            </select>
+                        </div>
                     </label>
                 </div>
                 <div class="col-6">
-                    <label for="band" class="form-label">Avez vous un groupe :
-                        <select id="band" class="form-select" name="band" onchange="showDiv(this)" required>
-                            <option selected value="">-- Veuillez choisir --</option>
-                            <option value="1">Je suis dans un groupe</option>
-                            <option value="0">Je ne suis pas dans un groupe</option>
-                        </select>
+                    <label for="band" class="form-label text-center">Avez vous un groupe :
+                        <div class="col-lg-12">
+                            <select id="band" class="form-select my-lg-1" name="band" onchange="showDiv(this)">
+                                <option selected value="">-- Veuillez choisir --</option>
+                                <option value="1">J'ai un groupe</option>
+                                <option value="0">Je n'ai pas de groupe</option>
+                            </select>
+                        </div>
                     </label>
                 </div>
                 <div class="col-6" id="hiddenDiv" style="display:none">
-                    <label for="bandName" class="form-label">Nom du groupe :
-                        <input type="text" class="form-control" id="bandName" name="bandName" value="{{ valuesInput.bandName }}" placeholder="nom du groupe">
+                    <label for="bandName" class="form-label text-center">Nom du groupe :
+                        <div class="col-lg-12">
+                            <input type="text" class="form-control my-lg-1" id="bandName" name="bandName" value="{{ valuesInput.bandName }}" placeholder="nom du groupe">
+                        </div>
                     </label>
                 </div>
                 <div class="col-6">
-                    <label for="instrument" class="form-label">Instrument :
-                        <select id="instrument" class="form-select" name="instrument" required>
-                            <option selected value="null">-- Veuillez choisir --</option>
-                            <option value="1">Guitare</option>
-                            <option value="2">Batterie</option>
-                            <option value="3">Basse</option>
-                            <option value="4">Chant</option>
-                            <option value="5">Piano</option>
-                            <option value="6">Clavier</option>
-                            <option value="7">Cuivres</option>
-                            <option value="8">Percussion</option>
-                            <option value="9">Accordéon</option>
-                        </select>
+                    <label for="experience" class="form-label text-center">Niveau d'experience :
+                        <div class="col-lg-12">
+                            <select id="experience" class="form-select my-lg-1" name="experience">
+                                <option selected value="null">-- Veuillez choisir --</option>
+                                <option value="beginner">Débutant</option>
+                                <option value="advanced">Confirmé</option>
+                                <option value="expert">Expert</option>
+                            </select>
+                        </div>
                     </label>
                 </div>
                 <div class="col-6">
-                    <label for="experience" class="form-label">Niveau d'experience :
-                        <select id="experience" class="form-select" name="experience" required>
-                            <option selected value="null">-- Veuillez choisir --</option>
-                            <option value="beginner">Débutant</option>
-                            <option value="advanced">Confirmé</option>
-                            <option value="expert">Expert</option>
-                        </select>
+                    <label for="status" class="form-label text-center">Disponibilité :
+                        <div class="col-lg-12">
+                            <div class="col-lg-12">
+                                <select id="status" class="form-select my-lg-1" name="status">
+                                    <option selected value="null">-- Veuillez choisir --</option>
+                                    <option value="1">Disponible</option>
+                                    <option value="0">Non disponible</option>
+                                </select>
+                            </div>
+                        </div>
                     </label>
                 </div>
                 <div class="col-6">
-                    <label for="status" class="form-label">Disponibilité :
-                        <select id="status" class="form-select" name="status" required>
-                            <option selected value="null">-- Veuillez choisir --</option>
-                            <option value="1">Disponible</option>
-                            <option value="0">Non disponible</option>
-                        </select>
-                    </label>
-                </div>
-                <div class="col-6">
-                    <label for="style" class="form-label">Genre musical :
-                        <select id="style" class="form-select" name="style">
-                            <option selected value="">-- Veuillez choisir --</option>
-                            <option value="1">Rock</option>
-                            <option value="2">Pop</option>
-                            <option value="3">Metal</option>
-                            <option value="4">Funk</option>
-                            <option value="5">Soul</option>
-                            <option value="6">Hard-rock</option>
-                            <option value="7">Punk-rock</option>
-                            <option value="8">Electro</option>
-                            <option value="9">Disco</option>
-                            <option value="10">Reggae</option>
-                            <option value="11">Musette</option>
-                            <option value="12">Jazz</option>
-                            <option value="13">Classique</option>
-                        </select>
+                    <label for="style" class="form-label text-center">Genre musical :
+                        <div class="col-lg-12">
+                            <select id="style" class="form-select my-lg-1" name="style">
+                                <option selected value="">-- Veuillez choisir --</option>
+                                <option value="1">Rock</option>
+                                <option value="2">Pop</option>
+                                <option value="3">Metal</option>
+                                <option value="4">Funk</option>
+                                <option value="5">Soul</option>
+                                <option value="6">Hard-rock</option>
+                                <option value="7">Punk-rock</option>
+                                <option value="8">Electro</option>
+                                <option value="9">Disco</option>
+                                <option value="10">Reggae</option>
+                                <option value="11">Musette</option>
+                                <option value="12">Jazz</option>
+                                <option value="13">Classique</option>
+                            </select>
+                        </div>
                     </label>
                 </div>
             </div>
         </div>
-        <div class="col-12 d-flex my-3 order-lg-4 col-lg-10 justify-content-end">
-        <label for="description" class="form-label">Description :
-            <textarea type="textarea" class="form-control" id="description" name="description"> 
+        <div class="col-12 d-flex my-3 order-lg-4 order-4 col-lg-3 justify-content-lg-end justify-content-center mt-lg-5 pt-lg-5">
+        <label for="description" class="form-label text-center">Description :
+            <textarea type="textarea" class="form-control my-lg-1" id="description" name="description"> 
                 {{ valuesInput.description }}    
             </textarea>
         </label>
         </div>
-        <div class="col-12 col-lg-4 d-flex justify-content-center justify-content-lg-end mb-4 mb-lg-5 pb-lg-5 order-lg-5">
+        <div class="col-12 col-lg-2 d-flex justify-content-center justify-content-lg-end mb-4 mb-lg-5 pb-lg-5 order-5 order-lg-5">
             <a href="/privateAdd">
             <button type="submit" class="btn btn-primary">Valider</button>
             </a>
