@@ -47,7 +47,7 @@ class ProfileController extends AbstractController
 
             $profileManager = new ProfileManager();
             $id = $profileManager->editProfile($valuesInput);
-            header('Location:/private/show?id=' . $id);
+            header('Location:/privateShow?id=' . $id);
         }
 
         return $this->twig->render('PrivateProfile/privateProfile.html.twig');
