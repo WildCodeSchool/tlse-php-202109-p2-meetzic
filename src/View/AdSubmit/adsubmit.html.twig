@@ -3,21 +3,6 @@
 {% block stylesheet %}<link rel="stylesheet" href="/assets/css/adsubmit.css">{% endblock %}
 
 {% block content %}
-    {# <div class="form__container">
-        <form action="/advalidate" method="POST" class="form__box">
-                <div class="mb-3 form__title">
-                    <label for="title" class="form-label">Titre de votre annonce:</label>
-                    <input type="text" name="title" class="form-control input_title" id="title" aria-describedby="title">
-                </div>
-                <div class="mb-3 form__ad">
-                    <label for="description" class="form-label">Votre annonce:</label>
-                    <input type="text" name="description" class="form-floating input__ad" id="description">
-                </div>
-                <button type="submit" class="btn btn-primary form__button">envoyer</button>
-            </div>
-        </form>
-    </div> #}
-
 <main >
     <section class="ad_form">
         <section class="ad__form__header">
@@ -26,17 +11,16 @@
         <form action="/advalidate" method="POST">
             <section class="ad__form__box">
                     <div class="form-floating ad__title">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="title" name="title">
-                    <label for="floatingInput">titre de votre annonce</label>
+                    <input type="text" class="form-control" id="floating__ad__title" placeholder="title" name="title">
+                    <label for="floatingTitle">titre de votre annonce</label>
                 </div>  
                 <div class="form-floating ad__input">
-                    <input type="text" class="form-control" id="floatingPassword" placeholder="descriptif" name="description">
-                    <label for="floatingPassword">descriptif</label>
+                    <input type="textarea" class="form-control" id="floating__ad__input" placeholder="descriptif" name="description">
+                    <label for="floatingInput">descriptif</label>
                 </div>
                 <button class="btn btn-primary send__button" type="submit">Envoyer</button>
             </section>
         </form>
     </section>
 </main>
-
 {% endblock %}

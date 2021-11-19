@@ -1,78 +1,6 @@
-/* .form_container {
-    display: inline-block;
-    
-}
-
-.form__box {
-    transform: translateY(2rem);
-    background-color: rgb(255, 255, 255, 0.9);
-    margin: 2rem 2rem 2rem 2rem;
-    padding-top: 1rem;
-    border: 2px solid rgba(255, 255, 255);
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px black;
-    height: 26rem;
-}
-
-.form__title {
-    width: 16rem;
-    position: relative;
-    left: 50%;
-    transform: translateX(-8rem);
-    font-weight: bold;
-}
-
-.form__ad {
-    width: 16rem;
-    position: relative;
-    left: 50%;
-    transform: translateX(-8rem);
-    top: 1rem;
-    font-weight: bold;
-}
-
-.form-control {
-
-    width: 15rem;
-    border-radius: 10px;
-    box-shadow: 1px 1px 2px var(--main-bg-orange);
-}
-
-.input_title:hover, .input__ad:hover {
-    color: var(--main-bg-orange);
-}
-
-
-.form__button {
-    width: 12rem;
-    position: relative;
-    left: 50%;
-    transform: translateX(-6rem);
-    top: 2rem;
-   
-    color: white;
-    background-color: var(--main-bg-orange);
-    font-weight: bold;
-    font-size: 1em;
-    background-color: var(--second-figma-orange); 
-    border: 2px solid var(--main-bg-orange);
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px black;
-}
-
-.input__ad {
-    height: 10rem;
-    text-align: start;
-    padding-top: 1rem;
-} */
-
-
-/**********************************
-************************************/
-
 .ad_form {
     background-color: rgb(255, 255, 255, 0.9);
-    margin: 4rem 2rem 2rem 2rem;
+    margin: 4rem 1rem 2rem 1rem;
     border: 2px solid rgba(255, 255, 255);
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
@@ -92,16 +20,23 @@
 }
 
 .ad__title {
-    width: 15rem;
+    width: 21rem;
     border-radius: 10px;
     box-shadow: 1px 1px 2px var(--main-bg-orange);
 }
 
 .ad__input {
     margin: 1rem 0 0 0;
-    width: 15rem;
+    width: 21rem;
+    height: 12rem;
     border-radius: 10px;
     box-shadow: 1px 1px 2px var(--main-bg-orange);
+}
+
+#floating__ad__input {
+    text-align: start !important;
+    vertical-align: top !important;
+    height: 12rem;
 }
 
 .ad__title:hover, .ad__input:hover {
@@ -124,41 +59,25 @@
     box-shadow: 1px 1px 3px black;
 }
 
-.login__new {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
 @media screen and (min-width: 1200px) {
 
-    .login {
+    .ad__form {
         background-color: transparent;
         border: none;
         box-shadow: none;
-        display: flex;
-        flex-direction: row;
+        display: block;
+        /* flex-direction: row; */
         align-items: center;
         justify-content: center;
         gap: 5rem;
-        margin: 1rem 5rem 0 0;
+        margin: 1rem 5rem 2rem 6rem;
     }
     
-    .login__header {
-        text-align: right;
-        margin-bottom: 5rem;
-    }
-
-    .login__header h2 {
-        font-size: 3rem;
-    } 
-
-    .login__header h6 {
-        font-size: 1.5rem;  
-        margin-top: 2rem;
+    h6 {
+        font-size: 2rem;
     }
     
-    .login__form {
+    .ad__for__box {
         background-color: rgb(255, 255, 255, 0.9);
         margin: 6rem;
         border: 2px solid rgba(255, 255, 255);
@@ -172,28 +91,18 @@
         font-size: 1.5rem;
     }
     
-    .login__error {
-        font-size: 1.5rem;
-        padding: 0;
+    .ad__title {
+        width: 60em;
         margin-top: 2rem;
     }
     
-    .login__nickname {
-        width: 25rem;
-        margin-top: 1rem;
-    }
-    
-    .login__password {
-        margin: 1rem 0 0 0;
-        width: 25rem;
+    .ad__input {
+        margin: 2rem 0 0 0;
+        width: 60rem;
     }
  
-    .login__button { 
-        margin: 1.5rem;
-        font-size: 1.5rem;
-    }
-    
-    .login__new {
+    .send__button { 
+        margin: 2rem;
         font-size: 1.5rem;
     }
 }
