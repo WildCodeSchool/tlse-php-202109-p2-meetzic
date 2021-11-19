@@ -25,5 +25,4 @@ return [
     'advalidate' => ['AdController', 'insertAd', ['id']],
     'contact' => ['ProfileController', 'contact', ['getId']],
     'validation' => ['ProfileController', 'validation', ['getId']],
-
 ];

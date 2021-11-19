@@ -60,7 +60,6 @@ class ProfileController extends AbstractController
                     $_SESSION['nickname'] = $valuesInput['nickname'];
                     $_SESSION['id'] = $id;
                     header('Location:' . $_COOKIE['previous']);
-                    // header('Location:/privateShow?id=' . $id);
                 }
             } else {
                 $errors[] = "Merci de renseigner tous les champs";
