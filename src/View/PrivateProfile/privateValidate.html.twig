@@ -18,7 +18,7 @@
                 <input type="hidden" name="id" value="{{ id }}"/>
             </form>
         </div>
-        <div class="col-12 col-lg-5 d-flex justify-content-center mb-5">
+        <div class="col-12 col-lg-5 d-flex justify-content-center mb-5 private__button">
             <form action="/privateDelete" method="GET">
                 <a href="/privateDelete?id={{ sessionId }}">
                 <button type="button" class="btn btn-primary login__button" data-bs-toggle="modal" data-bs-target="#exampleModal">Supprimer le profil</button>
