@@ -12,7 +12,7 @@ use App\Controller\SessionController;
 return [
     '' => ['IndexController', 'index',],
     'home' => ['AdController', 'browse',],
-    'home/search' => ['AdController', 'browseBySearch', ['query']],
+    'homeSearch' => ['AdController', 'browseBySearch', ['query']],
     'profile' => ['ProfileController', 'show', ['id']],
     'private' => ['ProfileController', 'profileView'],
     'login' => ['SessionController', 'login'],
@@ -23,4 +23,6 @@ return [
     'privateDelete' => ['ProfileController', 'deleteById', ['id']],
     'adsubmit' => ['AdController', 'addAd',['id']],
     'advalidate' => ['AdController', 'insertAd', ['id']],
+    'contact' => ['ProfileController', 'contact', ['getId']],
+    'validation' => ['ProfileController', 'validation', ['getId']],
 ];

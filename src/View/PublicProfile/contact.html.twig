@@ -1,0 +1,37 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/profile.css">
+    <link rel="stylesheet" href="/assets/css/contact.css">
+{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row col-lg-5 order-lg-2 mt-lg-5 contact__adCard" >
+        <div class="col-xs-12 col-sm-12 col-lg-6 mt-2 mt-lg-5">
+            <div class="card mt-lg-2">
+                <div class="card-ad-body">
+                    <h6 class="card-ad-title">{{ tupple.title }}</h6>
+                    <p class="card-ad-text">{{ tupple.annonce }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" >
+        <div class="col-12 col-lg-6">
+            <form action="validation" method="POST" class="contact__box">
+                <div class="contact__object">
+                    <label for="object" class="form-label">Objet :</label>
+                    <input type="text" name="object" class="form-control" id="object" aria-describedby="title">
+                </div>
+                <div class="contact__message">
+                    <label for="message" class="form-label">Votre message :</label>
+                    <textarea type="text" name="message" class="form-control input__ad" id="message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary form__button">Envoyer</button>
+            </form>
+       </div>
+    </div>   
+</div>
+{% endblock %}

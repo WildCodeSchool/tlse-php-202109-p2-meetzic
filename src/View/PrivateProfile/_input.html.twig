@@ -1,8 +1,8 @@
 <div class="container d-lg-flex flex-wrap">
-    <form class="row g-3" action="/privateAdd" method="post">
+    <form class="row g-3" action="privateAdd" method="post">
         <div class="col-11 order-2 order-lg-2 col-lg-3 mt-lg-5 pt-lg-5">
             <label for="avatar" class="text-center">Chargez un lien pour définir votre avatar :    
-                <input type="file" class="form-control col-12 col-lg-12 my-4 mt-lg-5 ml-2" id="avatar" name="avatar" value="{{ valuesInput.avatar }}">
+                <input type="file" class="form-control col-12 col-lg-12 my-4 mt-lg-5 ml-2" name="avatar" value="{{ valuesInput.avatar }}">
             </label>
         </div>
         <div class="col-12 col-lg-12 order-1 order-lg-1">
@@ -132,22 +132,22 @@
         </div>
         <div class="container-fluid col-12 order-5 order-lg-5 d-flex flex-wrap">
             <div class="col-4 col-lg-4 d-flex justify-content-lg-around">
-                <a href="/privateAdd">
+                <a href="privateAdd">
                     <button type="submit" class="btn btn-primary login__button">Valider</button>
                 </a>
             </div>
         </form>     
         <div class="col-8 col-lg-4 d-flex justify-content-lg-around">
-            <form action="/privateDelete" method="GET">
+            <form action="privateDelete" method="GET">
                 <div class="col-12 col-lg-12 d-flex justify-content-center justify-content-lg-end mb-4 mb-lg-5 pb-lg-5">
-                    <a href="/privateDelete?id={{ sessionId }}">
+                    <a href="privateDelete?id={{ sessionId }}">
                         <button type="button" class="btn btn-primary login__button" data-bs-toggle="modal" data-bs-target="#exampleModal">Supprimer le profil</button>
                     </a>
                 </div>
             </form>
         </div> 
         <div class="col-12 d-flex justify-content-center col-lg-4 d-flex justify-content-lg-around">
-            <form action="/adsubmit" method="GET">
+            <form action="adsubmit" method="GET">
                 <div>
                     <button type="submit" class="btn btn-primary login__button">Ajouter une annonce</button>
                     <input type="hidden" name="id" value="{{ id }}"/>
