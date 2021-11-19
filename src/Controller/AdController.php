@@ -45,6 +45,7 @@ class AdController extends AbstractController
 
     public function browseBySearch(string $query)
     {
+        $this->previousPage();
         $adModel = new AdModel();
         $choice = isset($_COOKIE['firstChoice']) ? $_COOKIE['firstChoice'] : null;
         $ads = $adModel->getAll();
@@ -66,11 +67,13 @@ class AdController extends AbstractController
 
     public function addAd($id)
     {
+        $this->previousPage();
         return $this->twig->render('AdSubmit/adsubmit.html.twig', ['id' => $_SESSION['id']]);
     }
 
     public function insertAd()
     {
+        $this->previousPage();
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $adInputs = array_map('trim', $_POST);
             $adModel = new AdModel();

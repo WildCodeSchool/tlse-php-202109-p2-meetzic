@@ -23,4 +23,7 @@ return [
     'privateDelete' => ['ProfileController', 'deleteById', ['id']],
     'adsubmit' => ['AdController', 'addAd',['id']],
     'advalidate' => ['AdController', 'insertAd', ['id']],
+    'contact' => ['ProfileController', 'contact', ['getId']],
+    'validation' => ['ProfileController', 'validation', ['getId']],
+
 ];
