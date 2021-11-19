@@ -23,6 +23,7 @@ class IndexController extends AbstractController
             return $this->twig->render('Index/index.html.twig');
         } else {
             header('Location: home');
+            return '';
         }
     }
 }

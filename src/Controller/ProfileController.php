@@ -23,7 +23,7 @@ class ProfileController extends AbstractController
         $tupple = $profileManager->selectAllColumnById($id);
 
         $getId = setcookie('getId', $_GET['id']);
-        return $this->twig->render('PublicProfile/publicProfile.html.twig', ['tupple' => $tupple], ['getId' => $getId]);
+        return $this->twig->render('PublicProfile/publicProfile.html.twig', ['tupple' => $tupple, 'getId' => $getId]);
     }
 
     /**
