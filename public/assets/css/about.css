@@ -12,21 +12,28 @@
 }
 
 .about__anonymousImg {
-    width: 100%;
+    width: 90%;
+    ;
 }
 
 .about__title {
     text-shadow: 2px 2px 2px #FF6D00;
     text-align: center;
-    margin: 3rem 0 2rem 0;
+    margin: 2rem 0 2rem 0;
+    width: 80%;
+    font-size: 3rem;
 }
 
 .about__text {
     text-align: center;
+    width: 80%;
+    font-size: 1.5rem;
 }
 
 .about__sign {
     text-shadow: 2px 2px 2px #FF6D00;
     text-align: right;
-    margin-right: 1rem;
+    margin: 1rem 1rem 0 0;
+    width: 80%;
+    font-size: 1.5rem;
 }

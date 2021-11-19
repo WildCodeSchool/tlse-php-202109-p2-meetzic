@@ -1,3 +1,7 @@
+body {
+    font-family: textFont;
+}
+
 .login__button {
     display: flex;
     flex-direction: column;
@@ -7,6 +11,9 @@
     border: 2px solid var(--main-bg-orange);
     border-radius: 10px;
     box-shadow: 1px 1px 3px black;
+}
+.private__button a {
+    text-decoration: none !important;
 }
 
 .login__button:hover {
@@ -19,6 +26,8 @@
     border: 2px solid rgba(255, 255, 255);
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
+    width: 20rem;
+    height: 10rem;
 }
 
 .private__card {
@@ -26,7 +35,8 @@
     border: 2px solid rgba(255, 255, 255);
     border-radius: 10px;
     box-shadow: 2px 2px 5px black;
-    max-height: 10rem;
+    max-height: 8rem;
+   
 }
 
 .private__img {
@@ -35,6 +45,23 @@
     border: 2px solid var(--main-black);
     border-radius: 10px;
     box-shadow: 3px 3px 6px rgb(0, 0, 0, 1);
+}
+
+.private input:hover, .private textarea:hover, .private select:hover {
+    color: var(--main-bg-orange);
+}
+
+.private option {
+    color: black;
+}
+
+#description {
+    color: black;
+}
+
+.private input:hover, .private textarea:hover, .private select:hover {
+    border-color: var(--main-bg-orange);
+    box-shadow: 0 0 0 0.2rem rgba(255, 109, 0, 0.25);
 }
 
 @media screen and (min-width: 1200px) {
@@ -72,5 +99,10 @@
         width: 18rem;
         height: 18rem;
         justify-content: right;
+    }
+    
+    #description {
+        padding: 1rem;
+        margin-left: 1rem;
     }
 }

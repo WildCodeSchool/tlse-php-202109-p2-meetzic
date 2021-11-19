@@ -59,6 +59,11 @@
     box-shadow: 1px 1px 3px black;
 }
 
+.send__button:hover {
+    background-color: var(--main-bg-orange);
+    border-color: var(--main-black);
+}
+
 @media screen and (min-width: 1200px) {
 
     .ad__form {
