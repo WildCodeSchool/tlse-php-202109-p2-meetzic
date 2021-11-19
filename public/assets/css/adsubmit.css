@@ -1,45 +1,108 @@
-.form__box {
-    transform: translateY(2rem);
-}
-
-.form__title {
-    width: 26rem;
-    position: relative;
-    left: 50%;
-    transform: translateX(-13rem);
-    font-weight: bold;
-}
-
-.form__ad {
-    width: 26rem;
-    position: relative;
-    left: 50%;
-    transform: translateX(-13rem);
-    top: 1rem;
-    font-weight: bold;
-}
-
-.form-control {
+.ad_form {
+    background-color: rgb(255, 255, 255, 0.9);
+    margin: 4rem 1rem 2rem 1rem;
+    border: 2px solid rgba(255, 255, 255);
     border-radius: 10px;
-    border: 5px double var(--main-black);
+    box-shadow: 2px 2px 5px black;
+}
+
+.ad__form__header {
+    text-align: center;
+    padding: 1rem 1rem 0 1rem;
+}
+
+.ad__form__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%
+}
+
+.ad__title {
+    width: 21rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px var(--main-bg-orange);
+}
+
+.ad__input {
+    margin: 1rem 0 0 0;
+    width: 21rem;
+    height: 12rem;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px var(--main-bg-orange);
+}
+
+#floating__ad__input {
+    text-align: start !important;
+    vertical-align: top !important;
+    height: 12rem;
+}
+
+.ad__title:hover, .ad__input:hover {
+    color: var(--main-bg-orange);
+}
+
+.form-control:focus {
+    border-color: var(--main-bg-orange);
+    box-shadow: 0 0 0 0.2rem rgba(255, 109, 0, 0.25);
+} 
+
+.send__button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    margin: 1.5rem;
+    background-color: var(--second-figma-orange); 
+    border: 2px solid var(--main-bg-orange);
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px black;
+}
+
+@media screen and (min-width: 1200px) {
+
+    .ad__form {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        display: block;
+        /* flex-direction: row; */
+        align-items: center;
+        justify-content: center;
+        gap: 5rem;
+        margin: 1rem 5rem 2rem 6rem;
+    }
     
-}
-
-.form__button {
-    width: 12rem;
-    position: relative;
-    left: 50%;
-    transform: translateX(-6rem);
-    top: 2rem;
-    border-radius: 10px;
-    color: white;
-    background-color: var(--main-bg-orange);
-    font-weight: bold;
-    font-size: 1em;
-}
-
-.input__ad {
-    height: 10rem;
-    text-align: start;
-    padding-top: 1rem;
+    h6 {
+        font-size: 2rem;
+    }
+    
+    .ad__for__box {
+        background-color: rgb(255, 255, 255, 0.9);
+        margin: 6rem;
+        border: 2px solid rgba(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        font-size: 1.5rem;
+    }
+    
+    .ad__title {
+        width: 60em;
+        margin-top: 2rem;
+    }
+    
+    .ad__input {
+        margin: 2rem 0 0 0;
+        width: 60rem;
+    }
+ 
+    .send__button { 
+        margin: 2rem;
+        font-size: 1.5rem;
+    }
 }

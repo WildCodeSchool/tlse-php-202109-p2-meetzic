@@ -1,0 +1,76 @@
+.login__button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    margin: 1.5rem;
+    background-color: var(--second-figma-orange); 
+    border: 2px solid var(--main-bg-orange);
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px black;
+}
+
+.login__button:hover {
+    background-color: var(--main-bg-orange);
+    border-color: var(--main-black);
+}
+
+.private__description {
+    background-color: rgb(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+}
+
+.private__card {
+    background-color: rgb(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+    max-height: 10rem;
+}
+
+.private__img {
+    width: 12rem;
+    height: 12rem;
+    border: 2px solid var(--main-black);
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px rgb(0, 0, 0, 1);
+}
+
+@media screen and (min-width: 1200px) {
+    .private__title h3 {
+        font-size: 3rem;
+    }
+
+    .private__secondTitle p {
+        font-size: 1.5rem;
+    }
+
+    .private__description, .private__card {
+        background-color: rgb(255, 255, 255, 0.9);
+        border: 2px solid rgba(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px black;
+        width: 100%;
+        font-size: 1.3rem;
+    }
+
+    .private__card {
+        margin-left: 35rem;
+    }
+
+    .login__button {
+        margin: 1.5rem;
+        font-size: 1.5rem;
+    }
+
+    label {
+        font-size: 1.3rem;
+    }
+
+    .private__img {
+        width: 18rem;
+        height: 18rem;
+        justify-content: right;
+    }
+}

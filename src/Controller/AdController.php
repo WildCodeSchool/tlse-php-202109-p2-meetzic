@@ -51,15 +51,15 @@ class AdController extends AbstractController
         $ads = $adModel->getAll();
         if (empty($query)) {
             if ($choice === 'band') {
-                $ads = $adModel->getAdMusician();
-            } else {
                 $ads = $adModel->getAdBand();
+            } else {
+                $ads = $adModel->getAdMusician();
             }
         } else {
             if ($choice === 'band') {
-                $ads = $adModel->getAdMusicianSearch($query);
-            } else {
                 $ads = $adModel->getAdBandSearch($query);
+            } else {
+                $ads = $adModel->getAdMusicianSearch($query);
             }
         }
         return $this->twig->render('Home/ad.html.twig', ['ads' => $ads]);
