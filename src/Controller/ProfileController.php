@@ -6,7 +6,6 @@ use App\Model\AdModel;
 use App\Model\ProfileManager;
 use App\Model\SessionManager;
 
-
 class ProfileController extends AbstractController
 {
 

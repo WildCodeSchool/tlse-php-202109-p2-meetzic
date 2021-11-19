@@ -96,6 +96,5 @@ abstract class AbstractController
         $this->twig->addGlobal('connected', $connected);
         $this->twig->addGlobal('contact', $contact);
         $this->twig->addGlobal('validation', $validation);
-
     }
 }

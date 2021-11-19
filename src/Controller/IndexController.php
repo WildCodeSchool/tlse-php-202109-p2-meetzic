@@ -9,7 +9,7 @@ class IndexController extends AbstractController
      *
      * @return string
      */
-    public function index()
+    public function index(): string
     {
         if (!isset($_COOKIE['firstChoice'])) {
             if (!empty($_GET)) {
@@ -24,6 +24,5 @@ class IndexController extends AbstractController
         } else {
             header('Location: home');
         }
-        
     }
 }
