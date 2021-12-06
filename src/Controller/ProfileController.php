@@ -22,7 +22,8 @@ class ProfileController extends AbstractController
         $profileManager = new ProfileManager();
         $tupple = $profileManager->selectAllColumnById($id);
 
-        return $this->twig->render('PublicProfile/publicProfile.html.twig', ['tupple' => $tupple]);
+        $getId = setcookie('getId', $_GET['id']);
+        return $this->twig->render('PublicProfile/publicProfile.html.twig', ['tupple' => $tupple, 'getId' => $getId]);
     }
 
     /**
@@ -32,7 +33,6 @@ class ProfileController extends AbstractController
      */
     public function profileView(): string
     {
-        $this->previousPage();
         return $this->twig->render('PrivateProfile/privateProfile.html.twig');
     }
 
@@ -43,7 +43,6 @@ class ProfileController extends AbstractController
      */
     public function addProfile(): string
     {
-        $this->previousPage();
         $errors = [];
         $sessionManager = new SessionManager();
 
@@ -60,7 +59,7 @@ class ProfileController extends AbstractController
                     $id = $profileManager->editProfile($valuesInput);
                     $_SESSION['nickname'] = $valuesInput['nickname'];
                     $_SESSION['id'] = $id;
-                    header('Location:/privateShow?id=' . $id);
+                    header('Location:' . $_COOKIE['previous']);
                 }
             } else {
                 $errors[] = "Merci de renseigner tous les champs";
@@ -93,5 +92,23 @@ class ProfileController extends AbstractController
         $id = $_GET['id'];
         $profileManager->deleteProfile($id);
         header('Location:/home');
+    }
+
+    public function contact($getId)
+    {
+        $getId = $_COOKIE['getId'];
+        $profileManager = new ProfileManager();
+        $tupple = $profileManager->selectAllColumnById($getId);
+
+        return $this->twig->render('PublicProfile/contact.html.twig', ['tupple' => $tupple]);
+    }
+
+    public function validation($getId)
+    {
+        $getId = $_COOKIE['getId'];
+        $profileManager = new ProfileManager();
+        $tupple = $profileManager->selectAllColumnById($getId);
+
+        return $this->twig->render('PublicProfile/validation.html.twig', ['tupple' => $tupple]);
     }
 }

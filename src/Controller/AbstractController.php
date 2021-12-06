@@ -79,16 +79,22 @@ abstract class AbstractController
             $deposit = "adsubmit?id=" . $sessionId;
             $redirection = "privateShow?id=" . $sessionId;
             $connected = true;
+            $contact = "contact?id= . $sessionId";
+            $validation = "contact?id=" . $sessionId;
         } else {
             $sessionId = "";
             $redirection = "login";
             $deposit = "login";
             $connected = false;
+            $contact = "login";
+            $validation = "contact?id=" . $sessionId;
         }
 
         $this->twig->addGlobal('sessionId', $sessionId);
         $this->twig->addGlobal('redirection', $redirection);
         $this->twig->addGlobal('deposit', $deposit);
         $this->twig->addGlobal('connected', $connected);
+        $this->twig->addGlobal('contact', $contact);
+        $this->twig->addGlobal('validation', $validation);
     }
 }
