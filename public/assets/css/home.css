@@ -53,6 +53,16 @@
     }
 }
 
+.submit_button {
+    margin-left: 3.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    border-radius: 10px;
+    background-color: var(--second-bg-orange);
+}
+
 .search-icon {
     height: 2rem;
     width: 2rem;
